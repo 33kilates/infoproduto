@@ -1,17 +1,40 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raio-X da Equipe Híbrida - Diagnóstico</title>
+
+    <!-- ✅ Dimpple Analytics (cole no <head>) -->
+    <script type="text/javascript">
+        (function (g, u, r, i, d, e, a) {
+            g.DimppleAnalyticsObject = d; if (!(d in g)) {
+                g[d] = function () { g[d].q.push(arguments); }; g[d].q = [];
+            } g[d].l = (new Date()).getTime(); var e = u.createElement(r);
+            e.src = i; e.async = true; var a = u.getElementsByTagName(r)[0]; a.parentNode.insertBefore(e, a)
+        })(window, document, 'script', '//api.dimpple.com/public/js/analytics.js?trk=11314.zTEMMTQ.725aa855', 'trk');
+    </script>
+
+    <!-- ✅ GA4 (G-NG4F9GBLMJ) direto no HTML -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG4F9GBLMJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NG4F9GBLMJ', { send_page_view: true });
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+
     <script>
         tailwind.config = {
             theme: {
@@ -61,8 +84,8 @@
                 o calote e o faturamento instável.
             </p>
 
-            <!-- VSL Placeholder -->
-            <div
+            <!-- ✅ VSL Placeholder (adicionado ID para tracking por elemento) -->
+            <div id="vsl-box"
                 class="relative w-full aspect-video bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 flex items-center justify-center overflow-hidden animate-scale-up delay-300 group cursor-pointer group hover:shadow-glow transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent z-10"></div>
                 <!-- Replace with actual Ember/Iframe -->
@@ -145,8 +168,8 @@
         </div>
     </section>
 
-    <!-- D. OS 3 PERFIS DA EQUIPE HÍBRIDA -->
-    <section class="py-24 bg-brand-dark text-white relative overflow-hidden">
+    <!-- ✅ D. OS 3 PERFIS DA EQUIPE HÍBRIDA (adicionado ID para tracking por elemento) -->
+    <section id="profiles-section" class="py-24 bg-brand-dark text-white relative overflow-hidden">
         <!-- Background elements -->
         <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl -translate-y-1/2"></div>
         <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl"></div>
@@ -245,8 +268,8 @@
         </div>
     </section>
 
-    <!-- F. STACK DA OFERTA -->
-    <section class="py-20 bg-gray-50 border-t border-gray-200">
+    <!-- ✅ F. STACK DA OFERTA (adicionado ID para tracking por elemento) -->
+    <section id="offer-section" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="text-center mb-16">
                 <span class="text-brand-blue font-bold tracking-widest text-sm">OFERTA ESPECIAL</span>
@@ -378,12 +401,12 @@
                 <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1/0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg> Aplicação simples</span>
                 <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1/0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg> Risco zero</span>
             </div>
         </div>
