@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raio-X da Equipe Híbrida - Diagnóstico</title>
 
-    <!-- ✅ Dimpple Analytics (cole no <head>) -->
+    <!-- Dimpple Analytics -->
     <script type="text/javascript">
         (function (g, u, r, i, d, e, a) {
             g.DimppleAnalyticsObject = d; if (!(d in g)) {
@@ -16,13 +16,15 @@
         })(window, document, 'script', '//api.dimpple.com/public/js/analytics.js?trk=11314.zTEMMTQ.725aa855', 'trk');
     </script>
 
-    <!-- ✅ GA4 (G-NG4F9GBLMJ) direto no HTML -->
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG4F9GBLMJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-NG4F9GBLMJ', { send_page_view: true });
+        gtag('config', 'G-NG4F9GBLMJ', {
+            send_page_view: true
+        });
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -65,8 +67,7 @@
 
     <!-- A. TOPO -->
     <header class="relative bg-gradient-to-br from-brand-dark to-brand-blue text-white overflow-hidden pb-20 pt-10">
-        <div
-            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
         </div>
         <div class="container mx-auto px-4 max-w-4xl relative z-10 text-center">
             <span
@@ -84,8 +85,8 @@
                 o calote e o faturamento instável.
             </p>
 
-            <!-- ✅ VSL Placeholder (adicionado ID para tracking por elemento) -->
-            <div id="vsl-box"
+            <!-- VSL Placeholder -->
+            <div
                 class="relative w-full aspect-video bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 flex items-center justify-center overflow-hidden animate-scale-up delay-300 group cursor-pointer group hover:shadow-glow transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent z-10"></div>
                 <!-- Replace with actual Ember/Iframe -->
@@ -106,26 +107,30 @@
     <!-- B. MECANISMO DO PROBLEMA -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 max-w-3xl text-center">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-8 scroll-reveal">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-8 scroll-reveal"
+                data-track="headline_cegueira_perfil">
                 O verdadeiro vilão é a <span class="text-brand-blue">Cegueira de Perfil</span>
             </h2>
             <div class="grid md:grid-cols-3 gap-8 mt-12">
                 <div
-                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-100">
+                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-100"
+                    data-track="problem_card_tratamento_igual">
                     <div class="text-4xl mb-4">🙈</div>
                     <h3 class="font-bold text-lg mb-2">Tratamento Igual</h3>
                     <p class="text-gray-600 text-sm">Tratar velocistas e maratonistas do mesmo jeito quebra o ritmo de
                         ambos.</p>
                 </div>
                 <div
-                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-200">
+                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-200"
+                    data-track="problem_card_esforco_desperdicado">
                     <div class="text-4xl mb-4">💸</div>
                     <h3 class="font-bold text-lg mb-2">Esforço Desperdiçado</h3>
                     <p class="text-gray-600 text-sm">Investir tempo e energia em quem nunca vai performar como você
                         espera.</p>
                 </div>
                 <div
-                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-300">
+                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-300"
+                    data-track="problem_card_prejuizo_acumulado">
                     <div class="text-4xl mb-4">📉</div>
                     <h3 class="font-bold text-lg mb-2">Prejuízo Acumulado</h3>
                     <p class="text-gray-600 text-sm">O custo invisível da rotatividade e da inadimplência corroendo seu
@@ -140,26 +145,29 @@
         <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-teal/5 to-transparent"></div>
         <div class="container mx-auto px-4 max-w-4xl relative z-10">
             <div class="text-center mb-16">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-6 scroll-reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-6 scroll-reveal"
+                    data-track="headline_modelo_validado">
                     Equipes lucrativas não dependem de sorte.<br>
                     Elas seguem um <span class="text-brand-teal">modelo validado</span>.
                 </h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto scroll-reveal delay-100">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto scroll-reveal delay-100"
+                    data-track="subheadline_arquitetura_equipe">
                     As maiores marcas do mundo não crescem na base da "animação". Elas crescem com <strong>arquitetura
                         de equipe</strong>.
                 </p>
             </div>
 
             <div
-                class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 scroll-reveal delay-200">
-                <!-- Logos Placeholders text for now -->
+                class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 scroll-reveal delay-200"
+                data-track="authority_logos">
                 <span class="text-2xl font-bold text-gray-400">Mary Kay</span>
                 <span class="text-2xl font-bold text-gray-400">Avon</span>
                 <span class="text-2xl font-bold text-gray-400">Natura</span>
             </div>
 
             <div
-                class="mt-12 p-8 bg-white/60 backdrop-blur-md border border-white rounded-2xl shadow-sm text-center scroll-reveal delay-300">
+                class="mt-12 p-8 bg-white/60 backdrop-blur-md border border-white rounded-2xl shadow-sm text-center scroll-reveal delay-300"
+                data-track="authority_quote">
                 <p class="text-gray-700 italic">
                     "Essas gigantes trabalham com diferentes perfis, usam líderes estratégicos e bases estáveis. O
                     segredo não é motivar todo mundo igual, mas dar a função certa para a pessoa certa."
@@ -168,21 +176,21 @@
         </div>
     </section>
 
-    <!-- ✅ D. OS 3 PERFIS DA EQUIPE HÍBRIDA (adicionado ID para tracking por elemento) -->
-    <section id="profiles-section" class="py-24 bg-brand-dark text-white relative overflow-hidden">
-        <!-- Background elements -->
+    <!-- D. OS 3 PERFIS DA EQUIPE HÍBRIDA -->
+    <section class="py-24 bg-brand-dark text-white relative overflow-hidden">
         <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl -translate-y-1/2"></div>
         <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl"></div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-16 scroll-reveal">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-16 scroll-reveal"
+                data-track="headline_tres_perfis">
                 Os 3 Perfis da <span class="text-brand-teal">Equipe Híbrida</span>
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-100">
+                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-100"
+                    data-track="perfil_sprinter">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
                         🚀
@@ -194,9 +202,9 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-200">
+                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-200"
+                    data-track="perfil_estavel">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-blue-400 to-brand-blue rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
                         🛡️
@@ -208,9 +216,9 @@
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-300">
+                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-300"
+                    data-track="perfil_empreendedora">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
                         🧠
@@ -228,12 +236,14 @@
     <!-- E. BENEFÍCIOS -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark text-center mb-16 scroll-reveal">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark text-center mb-16 scroll-reveal"
+                data-track="headline_beneficios">
                 O que acontece quando você usa o <span class="bg-brand-teal/20 px-2 rounded">Raio-X</span>
             </h2>
             <div class="space-y-6">
                 <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal">
+                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal"
+                    data-track="beneficio_fim_calote">
                     <div
                         class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center mr-6 text-green-600 text-xl">
                         ✅</div>
@@ -244,7 +254,8 @@
                     </div>
                 </div>
                 <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-100">
+                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-100"
+                    data-track="beneficio_tempo_mental">
                     <div
                         class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center mr-6 text-blue-600 text-xl">
                         🧘‍♀️</div>
@@ -254,7 +265,8 @@
                     </div>
                 </div>
                 <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-200">
+                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-200"
+                    data-track="beneficio_lucro_previsivel">
                     <div
                         class="w-12 h-12 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center mr-6 text-purple-600 text-xl">
                         📈</div>
@@ -268,8 +280,8 @@
         </div>
     </section>
 
-    <!-- ✅ F. STACK DA OFERTA (adicionado ID para tracking por elemento) -->
-    <section id="offer-section" class="py-20 bg-gray-50 border-t border-gray-200">
+    <!-- F. STACK DA OFERTA -->
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="text-center mb-16">
                 <span class="text-brand-blue font-bold tracking-widest text-sm">OFERTA ESPECIAL</span>
@@ -277,11 +289,10 @@
             </div>
 
             <div class="grid gap-12">
-                <!-- Item 1 -->
                 <div
-                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal">
+                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal"
+                    data-track="offer_item_planilha_triagem">
                     <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
-                        <!-- Image Container -->
                         <img src="https://placehold.co/600x400/08418e/FFFFFF?text=Planilha+de+Triagem"
                             alt="Planilha de Triagem"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -298,11 +309,10 @@
                     </div>
                 </div>
 
-                <!-- Item 2 -->
                 <div
-                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100">
+                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100"
+                    data-track="offer_item_manual_scripts">
                     <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
-                        <!-- Image Container -->
                         <img src="manual_scripts_1765833948537.png" alt="Manual e Scripts"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
@@ -317,11 +327,10 @@
                     </div>
                 </div>
 
-                <!-- Bonus -->
                 <div
-                    class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200">
+                    class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200"
+                    data-track="offer_bonus_demitir_sem_traumas">
                     <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
-                        <!-- Image Container -->
                         <img src="firing_relief_1765833964591.png" alt="Demitir sem Traumas"
                             class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                     </div>
@@ -339,8 +348,7 @@
                 </div>
             </div>
 
-            <!-- Price Anchor -->
-            <div class="mt-16 text-center scroll-reveal">
+            <div class="mt-16 text-center scroll-reveal" data-track="price_anchor">
                 <p class="text-gray-500 text-lg mb-2">Valor total de tudo: <span
                         class="line-through decoration-red-500">R$ 291,00</span></p>
                 <div class="flex flex-col items-center justify-center">
@@ -353,7 +361,7 @@
 
     <!-- G. GARANTIA -->
     <section class="py-16 bg-white border-b border-gray-100">
-        <div class="container mx-auto px-4 max-w-3xl text-center scroll-reveal">
+        <div class="container mx-auto px-4 max-w-3xl text-center scroll-reveal" data-track="guarantee">
             <div class="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center text-4xl mb-6">🔒
             </div>
             <h2 class="font-heading text-2xl font-bold text-brand-dark mb-4">Garantia Risco Zero</h2>
@@ -373,8 +381,7 @@
     </div>
 
     <section class="py-24 bg-brand-dark text-center relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-10 max-w-4xl mx-auto leading-tight">
@@ -401,12 +408,12 @@
                 <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1/0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg> Aplicação simples</span>
                 <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1/0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg> Risco zero</span>
             </div>
         </div>
