@@ -63,12 +63,15 @@
 
             <!-- VSL SECTION -->
             <div
-                class="relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 overflow-hidden animate-scale-up delay-300">
-                <vturb-smartplayer id="vid-6945825cc48d7588f4e7363b"
-                    style="display: block; margin: 0 auto; width: 100%; height: 100%;"></vturb-smartplayer>
+                class="relative w-full aspect-video bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 overflow-hidden animate-scale-up delay-300">
+                <iframe
+                    src="https://player.vimeo.com/video/1148087191?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    title="Análise de Perfil de Liderança">
+                </iframe>
             </div>
-            <script
-                type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/32c04de8-50be-4962-b6d1-667ddc540d4b/players/6945825cc48d7588f4e7363b/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+            <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
     </header>
 
@@ -286,46 +289,24 @@
                     </div>
                 </div>
 
-                <!-- Bonus 1 -->
+                <!-- Bonus -->
                 <div
                     class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200">
                     <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
                         <!-- Image Container -->
-                        <img src="bonus_meeting.png" alt="Reunião de Aceleração"
+                        <img src="firing_relief_1765833964591.png" alt="Demitir sem Traumas"
                             class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
                         <div
                             class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
-                            BÔNUS #1</div>
-                        <h3 class="font-heading text-2xl font-bold mb-4">Reunião Gratuita de Aceleração (30 min 1:1)
-                        </h3>
+                            BÔNUS EXCLUSIVO</div>
+                        <h3 class="font-heading text-2xl font-bold mb-4">Aula "Como Demitir Sem Traumas"</h3>
                         <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
-                            Sessão rápida pra pegar o seu Raio-X preenchido e transformar em um plano de ação imediato,
-                            além de apresentar um mecanismo exclusivo que já aplicamos na nossa operação.
+                            Aprenda a fazer a "limpeza" da equipe de forma ética, leve e sem criar inimigos. O alívio
+                            que você precisa.
                         </p>
-                        <div class="font-bold text-xl text-white">Valor: Inestimável</div>
-                    </div>
-                </div>
-
-                <!-- Bonus 2 -->
-                <div
-                    class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center border border-brand-teal/30 scroll-reveal delay-300">
-                    <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
-                        <!-- Image Container -->
-                        <img src="bonus_scripts.png" alt="Mini-Roteiros por Perfil"
-                            class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <div
-                            class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
-                            BÔNUS #2</div>
-                        <h3 class="font-heading text-2xl font-bold mb-4">Mini-Roteiros por Perfil</h3>
-                        <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
-                            Guia ultra prático: “o que falar com cada tipo de revendedora”, após o diagnóstico do
-                            Raio-X.
-                        </p>
-                        <div class="font-bold text-xl text-white">Valor: R$ 67</div>
+                        <div class="font-bold text-xl text-white">Valor: R$ 97</div>
                     </div>
                 </div>
             </div>
