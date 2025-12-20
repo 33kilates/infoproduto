@@ -22,18 +22,14 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-NG4F9GBLMJ', {
-            send_page_view: true
-        });
+        gtag('config', 'G-NG4F9GBLMJ', { send_page_view: true });
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 
@@ -85,11 +81,10 @@
                 o calote e o faturamento instável.
             </p>
 
-            <!-- VSL Placeholder -->
-            <div
+            <!-- VSL (container com ID para tracking) -->
+            <div id="vsl-box"
                 class="relative w-full aspect-video bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 flex items-center justify-center overflow-hidden animate-scale-up delay-300 group cursor-pointer group hover:shadow-glow transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent z-10"></div>
-                <!-- Replace with actual Ember/Iframe -->
                 <div class="z-20 text-center">
                     <div
                         class="w-20 h-20 bg-brand-teal rounded-full flex items-center justify-center mb-4 mx-auto pulse-animation">
@@ -117,24 +112,21 @@
                     data-track="problem_card_tratamento_igual">
                     <div class="text-4xl mb-4">🙈</div>
                     <h3 class="font-bold text-lg mb-2">Tratamento Igual</h3>
-                    <p class="text-gray-600 text-sm">Tratar velocistas e maratonistas do mesmo jeito quebra o ritmo de
-                        ambos.</p>
+                    <p class="text-gray-600 text-sm">Tratar velocistas e maratonistas do mesmo jeito quebra o ritmo de ambos.</p>
                 </div>
                 <div
                     class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-200"
                     data-track="problem_card_esforco_desperdicado">
                     <div class="text-4xl mb-4">💸</div>
                     <h3 class="font-bold text-lg mb-2">Esforço Desperdiçado</h3>
-                    <p class="text-gray-600 text-sm">Investir tempo e energia em quem nunca vai performar como você
-                        espera.</p>
+                    <p class="text-gray-600 text-sm">Investir tempo e energia em quem nunca vai performar como você espera.</p>
                 </div>
                 <div
                     class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-300"
                     data-track="problem_card_prejuizo_acumulado">
                     <div class="text-4xl mb-4">📉</div>
                     <h3 class="font-bold text-lg mb-2">Prejuízo Acumulado</h3>
-                    <p class="text-gray-600 text-sm">O custo invisível da rotatividade e da inadimplência corroendo seu
-                        lucro.</p>
+                    <p class="text-gray-600 text-sm">O custo invisível da rotatividade e da inadimplência corroendo seu lucro.</p>
                 </div>
             </div>
         </div>
@@ -152,8 +144,7 @@
                 </h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto scroll-reveal delay-100"
                     data-track="subheadline_arquitetura_equipe">
-                    As maiores marcas do mundo não crescem na base da "animação". Elas crescem com <strong>arquitetura
-                        de equipe</strong>.
+                    As maiores marcas do mundo não crescem na base da "animação". Elas crescem com <strong>arquitetura de equipe</strong>.
                 </p>
             </div>
 
@@ -169,8 +160,7 @@
                 class="mt-12 p-8 bg-white/60 backdrop-blur-md border border-white rounded-2xl shadow-sm text-center scroll-reveal delay-300"
                 data-track="authority_quote">
                 <p class="text-gray-700 italic">
-                    "Essas gigantes trabalham com diferentes perfis, usam líderes estratégicos e bases estáveis. O
-                    segredo não é motivar todo mundo igual, mas dar a função certa para a pessoa certa."
+                    "Essas gigantes trabalham com diferentes perfis, usam líderes estratégicos e bases estáveis. O segredo não é motivar todo mundo igual, mas dar a função certa para a pessoa certa."
                 </p>
             </div>
         </div>
@@ -188,45 +178,30 @@
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-100"
+                <div class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-100"
                     data-track="perfil_sprinter">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
-                        🚀
-                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">🚀</div>
                     <h3 class="font-heading text-2xl font-bold mb-3">Sprinter</h3>
                     <p class="text-gray-300 font-light text-sm leading-relaxed">
-                        O perfil "Foguete". Vende muito rápido, traz caixa imediato, mas pode cansar rápido. Precisa de
-                        incentivo curto e agressivo.
+                        O perfil "Foguete". Vende muito rápido, traz caixa imediato, mas pode cansar rápido. Precisa de incentivo curto e agressivo.
                     </p>
                 </div>
 
-                <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-200"
+                <div class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-200"
                     data-track="perfil_estavel">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-blue-400 to-brand-blue rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
-                        🛡️
-                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-brand-blue rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">🛡️</div>
                     <h3 class="font-heading text-2xl font-bold mb-3">Estável</h3>
                     <p class="text-gray-300 font-light text-sm leading-relaxed">
-                        O perfil "Colchão". Mantém a base, evita o churn, garante o faturamento recorrente. A base
-                        segura da sua operação.
+                        O perfil "Colchão". Mantém a base, evita o churn, garante o faturamento recorrente. A base segura da sua operação.
                     </p>
                 </div>
 
-                <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-300"
+                <div class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-300"
                     data-track="perfil_empreendedora">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
-                        🧠
-                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">🧠</div>
                     <h3 class="font-heading text-2xl font-bold mb-3">Empreendedora</h3>
                     <p class="text-gray-300 font-light text-sm leading-relaxed">
-                        O perfil "Cérebro". Tem visão de negócio, potencial para liderança e expansão. É quem vai
-                        escalar junto com você.
+                        O perfil "Cérebro". Tem visão de negócio, potencial para liderança e expansão. É quem vai escalar junto com você.
                     </p>
                 </div>
             </div>
@@ -241,47 +216,38 @@
                 O que acontece quando você usa o <span class="bg-brand-teal/20 px-2 rounded">Raio-X</span>
             </h2>
             <div class="space-y-6">
-                <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal"
+                <div class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal"
                     data-track="beneficio_fim_calote">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center mr-6 text-green-600 text-xl">
-                        ✅</div>
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center mr-6 text-green-600 text-xl">✅</div>
                     <div>
                         <h4 class="font-bold text-xl text-brand-dark">Fim do Calote</h4>
-                        <p class="text-gray-600">Você para de entregar mercadoria para quem não tem perfil de pagador.
-                        </p>
+                        <p class="text-gray-600">Você para de entregar mercadoria para quem não tem perfil de pagador.</p>
                     </div>
                 </div>
-                <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-100"
+
+                <div class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-100"
                     data-track="beneficio_tempo_mental">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center mr-6 text-blue-600 text-xl">
-                        🧘‍♀️</div>
+                    <div class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center mr-6 text-blue-600 text-xl">🧘‍♀️</div>
                     <div>
                         <h4 class="font-bold text-xl text-brand-dark">Tempo Livre Mental</h4>
                         <p class="text-gray-600">Sua equipe roda com mais autonomia, cada um na função certa.</p>
                     </div>
                 </div>
-                <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-200"
+
+                <div class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-200"
                     data-track="beneficio_lucro_previsivel">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center mr-6 text-purple-600 text-xl">
-                        📈</div>
+                    <div class="w-12 h-12 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center mr-6 text-purple-600 text-xl">📈</div>
                     <div>
                         <h4 class="font-bold text-xl text-brand-dark">Lucro Previsível</h4>
-                        <p class="text-gray-600">Entenda exatamente de onde vem seu faturamento e como escalar sem
-                            sofrer.</p>
+                        <p class="text-gray-600">Entenda exatamente de onde vem seu faturamento e como escalar sem sofrer.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- F. STACK DA OFERTA -->
-    <section class="py-20 bg-gray-50 border-t border-gray-200">
+    <!-- F. STACK DA OFERTA (com ID para tracking) -->
+    <section id="offer-section" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="text-center mb-16">
                 <span class="text-brand-blue font-bold tracking-widest text-sm">OFERTA ESPECIAL</span>
@@ -289,12 +255,10 @@
             </div>
 
             <div class="grid gap-12">
-                <div
-                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal"
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal"
                     data-track="offer_item_planilha_triagem">
                     <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
-                        <img src="https://placehold.co/600x400/08418e/FFFFFF?text=Planilha+de+Triagem"
-                            alt="Planilha de Triagem"
+                        <img src="https://placehold.co/600x400/08418e/FFFFFF?text=Planilha+de+Triagem" alt="Planilha de Triagem"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
@@ -302,15 +266,13 @@
                         <div class="text-brand-teal font-bold text-sm mb-2">ITEM 01</div>
                         <h3 class="font-heading text-2xl font-bold mb-4">Planilha de Triagem Psicográfica</h3>
                         <p class="text-gray-600 mb-6 border-l-2 border-brand-teal/30 pl-4">
-                            Ferramenta prática para filtrar perfis em minutos. Saiba quem é Sprinter, Estável ou
-                            Empreendedora antes de contratar.
+                            Ferramenta prática para filtrar perfis em minutos. Saiba quem é Sprinter, Estável ou Empreendedora antes de contratar.
                         </p>
                         <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100"
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100"
                     data-track="offer_item_manual_scripts">
                     <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
                         <img src="manual_scripts_1765833948537.png" alt="Manual e Scripts"
@@ -320,28 +282,23 @@
                         <div class="text-brand-teal font-bold text-sm mb-2">ITEM 02</div>
                         <h3 class="font-heading text-2xl font-bold mb-4">Manual de Identificação + Scripts</h3>
                         <p class="text-gray-600 mb-6 border-l-2 border-brand-teal/30 pl-4">
-                            O passo-a-passo exato e as mensagens de WhatsApp copi-e-cola para aplicar o método sem
-                            gaguejar.
+                            O passo-a-passo exato e as mensagens de WhatsApp copi-e-cola para aplicar o método sem gaguejar.
                         </p>
                         <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200"
+                <div class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200"
                     data-track="offer_bonus_demitir_sem_traumas">
                     <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
                         <img src="firing_relief_1765833964591.png" alt="Demitir sem Traumas"
                             class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
-                        <div
-                            class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
-                            BÔNUS EXCLUSIVO</div>
+                        <div class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">BÔNUS EXCLUSIVO</div>
                         <h3 class="font-heading text-2xl font-bold mb-4">Aula "Como Demitir Sem Traumas"</h3>
                         <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
-                            Aprenda a fazer a "limpeza" da equipe de forma ética, leve e sem criar inimigos. O alívio
-                            que você precisa.
+                            Aprenda a fazer a "limpeza" da equipe de forma ética, leve e sem criar inimigos. O alívio que você precisa.
                         </p>
                         <div class="font-bold text-xl text-white">Valor: R$ 97</div>
                     </div>
@@ -349,8 +306,7 @@
             </div>
 
             <div class="mt-16 text-center scroll-reveal" data-track="price_anchor">
-                <p class="text-gray-500 text-lg mb-2">Valor total de tudo: <span
-                        class="line-through decoration-red-500">R$ 291,00</span></p>
+                <p class="text-gray-500 text-lg mb-2">Valor total de tudo: <span class="line-through decoration-red-500">R$ 291,00</span></p>
                 <div class="flex flex-col items-center justify-center">
                     <p class="text-brand-dark font-bold text-2xl mb-1">Oferta Única de Página de Obrigado:</p>
                     <p class="text-6xl md:text-7xl font-extrabold text-brand-teal tracking-tight">R$ 47,00</p>
@@ -362,60 +318,42 @@
     <!-- G. GARANTIA -->
     <section class="py-16 bg-white border-b border-gray-100">
         <div class="container mx-auto px-4 max-w-3xl text-center scroll-reveal" data-track="guarantee">
-            <div class="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center text-4xl mb-6">🔒
-            </div>
+            <div class="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center text-4xl mb-6">🔒</div>
             <h2 class="font-heading text-2xl font-bold text-brand-dark mb-4">Garantia Risco Zero</h2>
             <p class="text-gray-600">
-                Se você aplicar o método e não sentir clareza absoluta sobre quem é quem na sua equipe, nós devolvemos
-                100% do seu dinheiro. Sem perguntas, sem letras miúdas.
+                Se você aplicar o método e não sentir clareza absoluta sobre quem é quem na sua equipe, nós devolvemos 100% do seu dinheiro. Sem perguntas, sem letras miúdas.
             </p>
         </div>
     </section>
 
     <!-- H. CTA FINAL -->
     <div class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-lg border-t border-gray-200 p-4 md:hidden z-50">
-        <a id="cta-mobile"
-            href="https://payment.ticto.app/O025361D8"
+        <a href="#checkout"
             class="block w-full bg-brand-teal hover:bg-teal-500 text-white text-center font-bold py-4 rounded-xl shadow-lg transition-colors">
             Quero Parar de Perder Dinheiro
         </a>
     </div>
 
-    <section class="py-24 bg-brand-dark text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
-        </div>
+    <!-- Seção alvo do #checkout (sem mudar layout) -->
+    <section id="checkout" class="py-24 bg-brand-dark text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light"></div>
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-10 max-w-4xl mx-auto leading-tight">
-                Você tem duas opções: continuar com a "Equipe Zumbi" ou assumir o <span class="text-brand-teal">Papel de
-                    líder estratégico</span>.
+                Você tem duas opções: continuar com a "Equipe Zumbi" ou assumir o <span class="text-brand-teal">Papel de líder estratégico</span>.
             </h2>
 
             <button id="cta-btn"
                 class="group relative inline-flex items-center justify-center px-8 py-5 text-lg md:text-xl font-bold text-white transition-all duration-200 bg-brand-teal rounded-full focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-brand-teal hover:bg-teal-500 hover:scale-105 shadow-[0_0_40px_-10px_rgba(44,198,182,0.5)]">
                 <span>Quero parar de perder dinheiro com equipe errada</span>
-                <svg class="w-6 h-6 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6">
-                    </path>
+                <svg class="w-6 h-6 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                 </svg>
             </button>
 
             <div class="flex items-center justify-center mt-6 space-x-6 text-sm text-blue-200/80">
-                <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                    </svg> Acesso imadiato</span>
-                <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1.5 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1.5 0 00-1.414 1.414l2 2a1 1.5 0 001.414 0l4-4z" />
-                    </svg> Aplicação simples</span>
-                <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1.5 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1.5 0 00-1.414 1.414l2 2a1 1.5 0 001.414 0l4-4z" />
-                    </svg> Risco zero</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" /></svg> Acesso imadiato</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" /></svg> Aplicação simples</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" /></svg> Risco zero</span>
             </div>
         </div>
     </section>
