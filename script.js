@@ -225,5 +225,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+    // Qualquer botão/link com .js-checkout -> Checkout
+  document.querySelectorAll('.js-checkout').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      // evita conflito com âncoras ou href="#"
+      e.preventDefault();
+
+      const source = el.getAttribute('data-cta-source') || el.id || 'cta_generic';
+      redirectToCheckout(source);
+    });
+  });
 });
   
+
