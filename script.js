@@ -29,8 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function redirectToCheckout(source) {
-    window.location.href = buildCheckoutUrl(source);
-  }
+  const url = buildCheckoutUrl(source);
+
+  // Dá tempo do evento de clique ser enviado (Dimpple/GA/Meta etc.)
+  setTimeout(() => {
+    window.location.href = url;
+  }, 250);
+}
+
 
   // Intersection Observer for Scroll Reveal
   const observerOptions = {
@@ -83,6 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // CTA do FAQ -> Checkout
+  const ctaFaq = document.getElementById('cta-faq');
+  if (ctaFaq) {
+    ctaFaq.addEventListener('click', (e) => {
+      e.preventDefault();
+      redirectToCheckout('cta_faq');
+    });
+  }
+  
+  
   /**
    * SIMULADOR (20/50/100)
    * Atualiza valores da seção D2 sem “cara de promessa”.
@@ -237,4 +253,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
   
+
 
