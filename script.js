@@ -157,5 +157,73 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default: 50 revendedoras (melhor “âncora”)
     updateSimulator(50);
   }
+/**
+   * FAQ Accordion (melhorado)
+   * - Abre/fecha com animação suave
+   * - Fecha os outros itens
+   * - Reaplica "hidden" ao fechar (evita espaçamento/padding “fantasma”)
+   */
+  const faqItems = document.querySelectorAll('.faq-item');
+  const FAQ_ANIM_MS = 260;
 
+  function closeFaqItem(item) {
+    item.classList.remove('open');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    if (!content) return;
+
+    // anima fechamento
+    content.style.maxHeight = '0px';
+    if (icon) icon.textContent = '+';
+
+    // depois da animação, esconde de verdade
+    window.setTimeout(() => {
+      content.classList.add('hidden');
+    }, FAQ_ANIM_MS);
+  }
+
+  function openFaqItem(item) {
+    item.classList.add('open');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    if (!content) return;
+
+    content.classList.remove('hidden');
+    // força “reflow” antes de medir altura
+    void content.offsetHeight;
+    content.style.maxHeight = content.scrollHeight + 'px';
+    if (icon) icon.textContent = '–';
+  }
+
+  faqItems.forEach((item) => {
+    const trigger = item.querySelector('.faq-trigger');
+    const content = item.querySelector('.faq-content');
+
+    if (!trigger || !content) return;
+
+    // estado inicial
+    content.style.overflow = 'hidden';
+    content.style.maxHeight = '0px';
+    content.style.transition = `max-height ${FAQ_ANIM_MS}ms ease`;
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // fecha os outros
+      faqItems.forEach((other) => {
+        if (other !== item && other.classList.contains('open')) {
+          closeFaqItem(other);
+        }
+      });
+
+      if (isOpen) {
+        closeFaqItem(item);
+      } else {
+        openFaqItem(item);
+      }
+    });
+  });
 });
+  
