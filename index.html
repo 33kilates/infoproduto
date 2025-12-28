@@ -284,32 +284,33 @@
       <!-- Simulador -->
       <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden scroll-reveal">
         <div class="p-8 md:p-10">
-          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-            <div>
-              <h3 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark mb-2">
-                Simulador rápido do caixa (por tamanho de time)
-              </h3>
-              <p class="text-gray-600">
-                Selecione seu cenário e veja quanto <strong>você pode estar deixando na mesa</strong> por cegueira de perfil.
-              </p>
-            </div>
+          <div class="text-center mb-8">
+  <h3 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark mb-2">
+    Simulador rápido do caixa (por tamanho de time)
+  </h3>
+  <p class="text-gray-600 max-w-3xl mx-auto">
+    Selecione seu cenário e veja quanto <strong>você pode estar deixando na mesa</strong> por cegueira de perfil.
+  </p>
+</div>
 
-            <!-- Toggle -->
-            <div class="inline-flex rounded-2xl bg-gray-50 border border-gray-200 p-1 w-full md:w-auto">
-              <button data-sim-size="20"
-                class="sim-btn flex-1 md:flex-none px-4 py-2 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark">
-                20 revendedoras
-              </button>
-              <button data-sim-size="50"
-                class="sim-btn flex-1 md:flex-none px-4 py-2 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark">
-                50 revendedoras
-              </button>
-              <button data-sim-size="100"
-                class="sim-btn flex-1 md:flex-none px-4 py-2 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark">
-                100 revendedoras
-              </button>
-            </div>
-          </div>
+<!-- Toggle centralizado e com quebra de linha segura -->
+<div class="flex justify-center mb-8">
+  <div class="flex flex-wrap justify-center gap-2 rounded-2xl bg-gray-50 border border-gray-200 p-2 max-w-full">
+    <button data-sim-size="20"
+      class="sim-btn px-5 py-2.5 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark whitespace-nowrap">
+      20 revendedoras
+    </button>
+    <button data-sim-size="50"
+      class="sim-btn px-5 py-2.5 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark whitespace-nowrap">
+      50 revendedoras
+    </button>
+    <button data-sim-size="100"
+      class="sim-btn px-5 py-2.5 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark whitespace-nowrap">
+      100 revendedoras
+    </button>
+  </div>
+</div>
+
 
           <!-- Resultado -->
           <div class="grid lg:grid-cols-3 gap-6">
@@ -607,4 +608,5 @@
 </body>
 
 </html>
+
 
