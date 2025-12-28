@@ -216,6 +216,211 @@
     </div>
   </section>
 
+  <!-- D2. PROVA NUMÉRICA + SIMULADOR (insira entre D e E) -->
+  <section class="py-20 bg-gray-50 border-t border-gray-200">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-12 scroll-reveal">
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-brand-blue text-sm font-bold mb-4 tracking-wide">
+          SIMULAÇÃO ILUSTRATIVA (sem promessa)
+        </span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+          O “dinheiro na mesa” que a <span class="text-brand-teal">Equipe Zumbi</span> esconde
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Quando você trata todo mundo igual, você perde caixa em silêncio.
+          O Raio-X existe pra transformar <strong>achismo</strong> em <strong>arquitetura de equipe</strong>.
+        </p>
+      </div>
+
+      <!-- Cards: faixas por perfil -->
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white rounded-3xl shadow-card border border-gray-100 p-7 scroll-reveal">
+          <div class="flex items-center justify-between mb-3">
+            <div class="font-heading text-xl font-bold text-brand-dark">Sprinter</div>
+            <div class="text-2xl">🚀</div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Perfil de pico. Faz caixa rápido quando você cria campanha certa (curta e agressiva).
+          </p>
+          <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+            <div class="text-sm text-gray-500 mb-1">Faixa típica (pedido/mês)</div>
+            <div class="text-2xl font-extrabold text-brand-dark">R$ 1.500 – R$ 4.000</div>
+            <div class="text-xs text-gray-500 mt-2">Exemplo citado na VSL: R$ 2.000 no 1º mês (varia).</div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-card border border-gray-100 p-7 scroll-reveal delay-100">
+          <div class="flex items-center justify-between mb-3">
+            <div class="font-heading text-xl font-bold text-brand-dark">Estável</div>
+            <div class="text-2xl">🛡️</div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Perfil de base. Mantém recorrência e reduz a “montanha-russa” do faturamento.
+          </p>
+          <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+            <div class="text-sm text-gray-500 mb-1">Faixa típica (pedido/mês)</div>
+            <div class="text-2xl font-extrabold text-brand-dark">R$ 300 – R$ 700</div>
+            <div class="text-xs text-gray-500 mt-2">Exemplo citado na VSL: R$ 300/mês (varia).</div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-card border border-gray-100 p-7 scroll-reveal delay-200">
+          <div class="flex items-center justify-between mb-3">
+            <div class="font-heading text-xl font-bold text-brand-dark">Empreendedora</div>
+            <div class="text-2xl">🧠</div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Perfil de escala. Tem visão de negócio e vira multiplicadora (liderança/expansão).
+          </p>
+          <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+            <div class="text-sm text-gray-500 mb-1">Faixa típica (pedido/mês)</div>
+            <div class="text-2xl font-extrabold text-brand-dark">R$ 1.000 – R$ 3.000</div>
+            <div class="text-xs text-gray-500 mt-2">+ potencial de liderança (varia conforme modelo).</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulador -->
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden scroll-reveal">
+        <div class="p-8 md:p-10">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+            <div>
+              <h3 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark mb-2">
+                Simulador rápido do caixa (por tamanho de time)
+              </h3>
+              <p class="text-gray-600">
+                Selecione seu cenário e veja quanto <strong>você pode estar deixando na mesa</strong> por cegueira de perfil.
+              </p>
+            </div>
+
+            <!-- Toggle -->
+            <div class="inline-flex rounded-2xl bg-gray-50 border border-gray-200 p-1 w-full md:w-auto">
+              <button data-sim-size="20"
+                class="sim-btn flex-1 md:flex-none px-4 py-2 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark">
+                20 revendedoras
+              </button>
+              <button data-sim-size="50"
+                class="sim-btn flex-1 md:flex-none px-4 py-2 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark">
+                50 revendedoras
+              </button>
+              <button data-sim-size="100"
+                class="sim-btn flex-1 md:flex-none px-4 py-2 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark">
+                100 revendedoras
+              </button>
+            </div>
+          </div>
+
+          <!-- Resultado -->
+          <div class="grid lg:grid-cols-3 gap-6">
+            <!-- Potencial -->
+            <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6">
+              <div class="text-sm font-bold text-brand-blue mb-2">POTENCIAL COM EQUIPE HÍBRIDA</div>
+              <div class="text-gray-600 text-sm mb-4">Estimativa de faturamento bruto/mês (pedido)</div>
+
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-gray-600 text-sm">Conservador</span>
+                  <span id="sim-hybrid-low" class="font-extrabold text-brand-dark"></span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-gray-600 text-sm">Provável</span>
+                  <span id="sim-hybrid-mid" class="font-extrabold text-brand-dark text-xl"></span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-gray-600 text-sm">Agressivo (campanhas)</span>
+                  <span id="sim-hybrid-high" class="font-extrabold text-brand-dark"></span>
+                </div>
+              </div>
+
+              <div class="mt-5 text-xs text-gray-500">
+                *Valores ilustrativos. Variam por ticket, frequência de pedidos, inadimplência e gestão.
+              </div>
+            </div>
+
+            <!-- Perdas -->
+            <div class="rounded-3xl bg-brand-dark text-white border border-white/10 p-6 relative overflow-hidden">
+              <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light"></div>
+              <div class="relative z-10">
+                <div class="text-sm font-bold text-brand-teal mb-2">EFEITO “EQUIPE ZUMBI”</div>
+                <div class="text-blue-100 text-sm mb-4">
+                  Sem triagem e sem função por perfil, é comum operar abaixo do potencial.
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-4 mb-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-blue-200 text-sm font-bold">Cenário moderado</span>
+                    <span class="text-brand-teal text-sm font-extrabold">10% – 15%</span>
+                  </div>
+                  <div class="text-sm text-blue-100">Dinheiro na mesa (estimativa)</div>
+                  <div id="sim-loss-moderate" class="text-2xl font-extrabold mt-1"></div>
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-blue-200 text-sm font-bold">Cenário pesado</span>
+                    <span class="text-brand-teal text-sm font-extrabold">30% – 50%</span>
+                  </div>
+                  <div class="text-sm text-blue-100">Dinheiro na mesa (estimativa)</div>
+                  <div id="sim-loss-heavy" class="text-2xl font-extrabold mt-1"></div>
+                </div>
+
+                <div class="mt-5 text-xs text-blue-200/80">
+                  Não é “motivação”. É <strong>arquitetura de equipe</strong>: perfil certo, função certa, gestão certa.
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="rounded-3xl bg-white border border-gray-100 p-6">
+              <div class="text-sm font-bold text-brand-blue mb-2">O QUE MUDA COM O RAIO-X</div>
+              <h4 class="font-heading text-2xl font-bold text-brand-dark mb-3">
+                Você para de adivinhar.
+              </h4>
+              <p class="text-gray-600 mb-5">
+                Em vez de “apostar” em quem te dá calote ou some, você aplica o Raio-X e usa o Manual
+                para colocar cada perfil na função certa — e estabilizar o caixa.
+              </p>
+
+              <ul class="space-y-3 text-sm text-gray-700 mb-6">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-brand-teal">✅</span>
+                  <span>Filtra quem tem perfil de pagador (menos inadimplência)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-brand-teal">✅</span>
+                  <span>Organiza incentivos por perfil (picos com Sprinter, base com Estável)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-brand-teal">✅</span>
+                  <span>Identifica quem vira liderança (Empreendedora) e multiplica o time</span>
+                </li>
+              </ul>
+
+              <a href="#offer-section"
+                class="inline-flex w-full items-center justify-center px-6 py-4 font-bold rounded-2xl bg-brand-teal text-white hover:bg-teal-500 transition-colors shadow-lg">
+                Quero aplicar o Raio-X agora
+              </a>
+
+              <div class="mt-4 text-xs text-gray-500 text-center">
+                Você recebe a planilha + manual + scripts pra aplicar sem “gaguejar”.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rodapé de credibilidade -->
+        <div class="px-8 md:px-10 py-6 bg-gray-50 border-t border-gray-200">
+          <p class="text-sm text-gray-600">
+            <strong>Importante:</strong> as faixas são estimativas ilustrativas para dar referência.
+            O objetivo do Raio-X é aumentar a previsibilidade e reduzir perdas invisíveis (calote, rotatividade e estoque parado).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
   <!-- E. BENEFÍCIOS -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
@@ -402,3 +607,4 @@
 </body>
 
 </html>
+
