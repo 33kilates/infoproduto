@@ -83,4 +83,79 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /**
+   * SIMULADOR (20/50/100)
+   * Atualiza valores da seção D2 sem “cara de promessa”.
+   */
+  const simData = {
+    20: { hybridLow: 13600, hybridMid: 25000, hybridHigh: 36400 },
+    50: { hybridLow: 34000, hybridMid: 62500, hybridHigh: 91000 },
+    100: { hybridLow: 68000, hybridMid: 125000, hybridHigh: 182000 }
+  };
+
+  const fmtBRL = (value) => new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    maximumFractionDigits: 0
+  }).format(value);
+
+  function formatRange(min, max) {
+    return `${fmtBRL(min)} – ${fmtBRL(max)}`;
+  }
+
+  function setActiveSimButton(size) {
+    document.querySelectorAll('.sim-btn').forEach(btn => {
+      const isActive = btn.getAttribute('data-sim-size') === String(size);
+      btn.classList.toggle('bg-white', isActive);
+      btn.classList.toggle('shadow-sm', isActive);
+      btn.classList.toggle('text-brand-dark', isActive);
+      btn.classList.toggle('text-gray-600', !isActive);
+    });
+  }
+
+  function updateSimulator(size) {
+    const data = simData[size];
+    if (!data) return;
+
+    // Potencial com equipe híbrida
+    const elLow = document.getElementById('sim-hybrid-low');
+    const elMid = document.getElementById('sim-hybrid-mid');
+    const elHigh = document.getElementById('sim-hybrid-high');
+
+    if (elLow) elLow.textContent = fmtBRL(data.hybridLow);
+    if (elMid) elMid.textContent = fmtBRL(data.hybridMid);
+    if (elHigh) elHigh.textContent = fmtBRL(data.hybridHigh);
+
+    // Perdas “Equipe Zumbi” (calculadas a partir do cenário provável)
+    // Moderado: 10%–15% abaixo do potencial
+    const moderateMin = Math.round(data.hybridMid * 0.10);
+    const moderateMax = Math.round(data.hybridMid * 0.15);
+
+    // Pesado: 30%–50% abaixo do potencial
+    const heavyMin = Math.round(data.hybridMid * 0.30);
+    const heavyMax = Math.round(data.hybridMid * 0.50);
+
+    const elLossModerate = document.getElementById('sim-loss-moderate');
+    const elLossHeavy = document.getElementById('sim-loss-heavy');
+
+    if (elLossModerate) elLossModerate.textContent = formatRange(moderateMin, moderateMax);
+    if (elLossHeavy) elLossHeavy.textContent = formatRange(heavyMin, heavyMax);
+
+    setActiveSimButton(size);
+  }
+
+  // Init
+  const simButtons = document.querySelectorAll('.sim-btn');
+  if (simButtons.length) {
+    simButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const size = Number(btn.getAttribute('data-sim-size'));
+        updateSimulator(size);
+      });
+    });
+
+    // Default: 50 revendedoras (melhor “âncora”)
+    updateSimulator(50);
+  }
+
 });
