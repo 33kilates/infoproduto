@@ -6,6 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raio-X da Equipe Híbrida - Diagnóstico</title>
 
+<script>
+(function () {
+  const p = new URLSearchParams(location.search);
+  const fbp = p.get("fbp");
+  const fbc = p.get("fbc");
+  const fbclid = p.get("fbclid");
+
+  function setCookie(name, val, days) {
+    if (!val) return;
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${encodeURIComponent(val)}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
+  }
+
+  if (!fbc && fbclid) {
+    const ts = Math.floor(Date.now() / 1000);
+    setCookie("_fbc", `fb.1.${ts}.${fbclid}`, 90);
+  } else {
+    setCookie("_fbc", fbc, 90);
+  }
+
+  setCookie("_fbp", fbp, 90);
+})();
+</script>
+  
   <!-- Dimpple Analytics -->
   <script type="text/javascript">
     (function (g, u, r, i, d, e, a) {
@@ -877,6 +902,7 @@
 </body>
 
 </html>
+
 
 
 
