@@ -7,26 +7,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const CHECKOUT_BASE_URL = 'https://payment.ticto.app/O025361D8?event=PageView';
 
   const PASS_THROUGH_PARAMS = [
-    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-    'fbclid', 'gclid', 'ttclid', 'wbraid', 'gbraid'
-  ];
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+  'fbclid', 'gclid', 'ttclid', 'wbraid', 'gbraid',
+  'fbp', 'fbc'
+];
 
+function getCookie(name) {
+  const match = document.cookie.match(
+    new RegExp("(^|; )" + name.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") + "=([^;]*)")
+  );
+  return match ? decodeURIComponent(match[2]) : null;
+}
+  
   function buildCheckoutUrl(source) {
-    const checkoutUrl = new URL(CHECKOUT_BASE_URL);
-    const currentParams = new URLSearchParams(window.location.search);
+  const checkoutUrl = new URL(CHECKOUT_BASE_URL);
+  const currentParams = new URLSearchParams(window.location.search);
 
-    // Repasse de parâmetros de campanha para o checkout (se ainda não existirem lá)
-    PASS_THROUGH_PARAMS.forEach((key) => {
-      if (currentParams.has(key) && !checkoutUrl.searchParams.has(key)) {
-        checkoutUrl.searchParams.set(key, currentParams.get(key));
-      }
-    });
+  // 1) Repasse de parâmetros de campanha para o checkout (se ainda não existirem lá)
+  PASS_THROUGH_PARAMS.forEach((key) => {
+    if (currentParams.has(key) && !checkoutUrl.searchParams.has(key)) {
+      checkoutUrl.searchParams.set(key, currentParams.get(key));
+    }
+  });
 
-    // Identificador opcional de qual CTA foi clicado (ajuda debug/atribuição)
-    if (source) checkoutUrl.searchParams.set('lp_cta', source);
-
-    return checkoutUrl.toString();
+  // 2) Fallback: se não veio fbp/fbc na URL, tenta cookie
+  if (!checkoutUrl.searchParams.get('fbp')) {
+    const fbp = getCookie('_fbp');
+    if (fbp) checkoutUrl.searchParams.set('fbp', fbp);
   }
+
+  if (!checkoutUrl.searchParams.get('fbc')) {
+    const fbc = getCookie('_fbc');
+    if (fbc) checkoutUrl.searchParams.set('fbc', fbc);
+  }
+
+  // 3) Se não vier fbc, mas vier fbclid, monta um fbc válido
+  const fbclid = checkoutUrl.searchParams.get('fbclid');
+  if (!checkoutUrl.searchParams.get('fbc') && fbclid) {
+    const ts = Math.floor(Date.now() / 1000);
+    checkoutUrl.searchParams.set('fbc', `fb.1.${ts}.${fbclid}`);
+  }
+
+  // 4) Identificador opcional do CTA
+  if (source) checkoutUrl.searchParams.set('lp_cta', source);
+
+  return checkoutUrl.toString();
+}
 
   function redirectToCheckout(source) {
   const url = buildCheckoutUrl(source);
@@ -253,5 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
   
+
 
 
