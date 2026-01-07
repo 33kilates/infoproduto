@@ -25,10 +25,11 @@ function getCookie(name) {
 
   // 1) Repasse de parâmetros de campanha para o checkout (se ainda não existirem lá)
   PASS_THROUGH_PARAMS.forEach((key) => {
-    if (currentParams.has(key) && !checkoutUrl.searchParams.has(key)) {
-      checkoutUrl.searchParams.set(key, currentParams.get(key));
-    }
-  });
+  const val = currentParams.get(key);
+  if (val && !checkoutUrl.searchParams.has(key)) {
+    checkoutUrl.searchParams.set(key, val);
+  }
+});
 
   // 2) Fallback: se não veio fbp/fbc na URL, tenta cookie
   if (!checkoutUrl.searchParams.get('fbp')) {
@@ -51,6 +52,10 @@ function getCookie(name) {
   // 4) Identificador opcional do CTA
   if (source) checkoutUrl.searchParams.set('lp_cta', source);
 
+ for (const [k, v] of checkoutUrl.searchParams.entries()) {
+  if (!v) checkoutUrl.searchParams.delete(k);
+}   
+    
   return checkoutUrl.toString();
 }
 
@@ -100,26 +105,30 @@ function getCookie(name) {
 
   // CTA principal -> Checkout
   const ctaBtn = document.getElementById('cta-btn');
-  if (ctaBtn) {
-    ctaBtn.addEventListener('click', () => {
-      redirectToCheckout('cta_btn');
-    });
-  }
+if (ctaBtn) {
+  ctaBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation(); // <-- impede o listener .js-checkout
+    redirectToCheckout('cta_btn');
+  });
+}
 
   // CTA mobile fixo -> Checkout (captura clique sem afetar layout)
   const ctaMobile = document.getElementById('cta-mobile');
-  if (ctaMobile) {
-    ctaMobile.addEventListener('click', (e) => {
-      e.preventDefault();
-      redirectToCheckout('cta_mobile');
-    });
-  }
+if (ctaMobile) {
+  ctaMobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation(); // <-- impede o listener .js-checkout
+    redirectToCheckout('cta_mobile');
+  });
+}
 
   // CTA do FAQ -> Checkout
   const ctaFaq = document.getElementById('cta-faq');
   if (ctaFaq) {
     ctaFaq.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       redirectToCheckout('cta_faq');
     });
   }
@@ -269,16 +278,18 @@ function getCookie(name) {
   });
     // Qualquer botão/link com .js-checkout -> Checkout
   document.querySelectorAll('.js-checkout').forEach((el) => {
-    el.addEventListener('click', (e) => {
-      // evita conflito com âncoras ou href="#"
-      e.preventDefault();
+  el.addEventListener('click', (e) => {
+    const id = el.id || '';
+    if (id === 'cta-btn' || id === 'cta-mobile' || id === 'cta-faq') return; // ✅ evita duplicar
 
-      const source = el.getAttribute('data-cta-source') || el.id || 'cta_generic';
-      redirectToCheckout(source);
-    });
+    e.preventDefault();
+    const source = el.getAttribute('data-cta-source') || id || 'cta_generic';
+    redirectToCheckout(source);
   });
 });
+});
   
+
 
 
 
