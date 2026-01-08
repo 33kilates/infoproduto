@@ -34,11 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Button Interaction Effect (Ripple or similar can be added here, currently handled by CSS hover)
+    // Button Interaction with UTM Forwarding
     const ctaBtn = document.getElementById('cta-btn');
     if (ctaBtn) {
         ctaBtn.addEventListener('click', () => {
-             window.location.href = 'https://payment.ticto.app/O025361D8?event=PageView&lp_cta=cta-btn&product_id=102220&offer_code=O025361D8&currency=brl&_gl=&fbc=&fbp=&fbclid=&payment_method=credit_card&visitor_id=&fingerprint=';
+             // 1. Link Base da Ticto (sem os parametros vazios do final)
+             const baseUrl = 'https://payment.ticto.app/O025361D8?event=PageView&lp_cta=cta-btn&product_id=102220&offer_code=O025361D8&currency=brl';
+             
+             // 2. Pega os parametros que estao na URL do seu site (Ex: ?utm_source=facebook)
+             const currentParams = window.location.search;
+
+             // 3. Junta tudo
+             let finalUrl = baseUrl;
+             if (currentParams) {
+                 // Remove o "?" extra se tiver e adiciona com "&"
+                 const cleanParams = currentParams.replace('?', '');
+                 finalUrl += '&' + cleanParams;
+             }
+
+             // 4. Redireciona com o rastreio completo
+             window.location.href = finalUrl;
         });
     }
 });
