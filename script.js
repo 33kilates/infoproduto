@@ -35,25 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Button Interaction with UTM Forwarding
-    const ctaBtn = document.getElementById('cta-btn');
-    if (ctaBtn) {
-        ctaBtn.addEventListener('click', () => {
-             // 1. Link Base da Ticto (sem os parametros vazios do final)
+    // Select ALL buttons with the trigger class (Main button + Floating Mobile Button)
+    const checkoutButtons = document.querySelectorAll('.checkout-click');
+    
+    checkoutButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+             e.preventDefault(); // Prevent default if it's an anchor tag
+             
+             // Base Checkout URL
              const baseUrl = 'https://payment.ticto.app/O025361D8?event=PageView&lp_cta=cta-btn&product_id=102220&offer_code=O025361D8&currency=brl';
              
-             // 2. Pega os parametros que estao na URL do seu site (Ex: ?utm_source=facebook)
+             // Get current URL parameters
              const currentParams = window.location.search;
 
-             // 3. Junta tudo
+             // Combine them
              let finalUrl = baseUrl;
              if (currentParams) {
-                 // Remove o "?" extra se tiver e adiciona com "&"
                  const cleanParams = currentParams.replace('?', '');
                  finalUrl += '&' + cleanParams;
              }
 
-             // 4. Redireciona com o rastreio completo
+             // Redirect
              window.location.href = finalUrl;
         });
-    }
+    });
 });
