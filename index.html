@@ -1,40 +1,41 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raio-X da Equipe Híbrida - Diagnóstico</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    brand: {
-                        blue: '#08418e',
-                        teal: '#2cc6b6',
-                        dark: '#0a192f',
-                        light: '#f8f9fa'
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raio-X da Equipe Híbrida - Diagnóstico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#08418e',
+                            teal: '#2cc6b6',
+                            dark: '#0a192f',
+                            light: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(44, 198, 182, 0.3)',
+                        'card': '0 10px 30px -10px rgba(0, 0, 0, 0.1)'
                     }
-                },
-                fontFamily: {
-                    sans: ['Inter', 'sans-serif'],
-                    heading: ['Outfit', 'sans-serif'],
-                },
-                boxShadow: {
-                    'glow': '0 0 20px rgba(44, 198, 182, 0.3)',
-                    'card': '0 10px 30px -10px rgba(0, 0, 0, 0.1)'
                 }
             }
         }
-    }
-</script>
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden selection:bg-brand-teal selection:text-white">
@@ -70,7 +71,7 @@
                 type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/32c04de8-50be-4962-b6d1-667ddc540d4b/players/695d1e0293850164e9f78c8f/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
         </div>
     </header>
-<div id="conteudo-pitch">
+
     <!-- B. MECANISMO DO PROBLEMA -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 max-w-3xl text-center">
@@ -358,7 +359,7 @@
 
     <!-- H. CTA FINAL -->
     <div class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-lg border-t border-gray-200 p-4 md:hidden z-50">
-        <a href="#checkout"
+        <a href="https://payment.ticto.app/O025361D8?event=PageView&lp_cta=cta-btn&product_id=102220&offer_code=O025361D8&currency=brl&_gl=&fbc=&fbp=&fbclid=&payment_method=credit_card&visitor_id=&fingerprint="
             class="block w-full bg-brand-teal hover:bg-teal-500 text-white text-center font-bold py-4 rounded-xl shadow-lg transition-colors">
             Quero Parar de Perder Dinheiro
         </a>
@@ -409,7 +410,6 @@
     </footer>
 
     <script src="script.js"></script>
-    </div>
 </body>
 
 </html>
