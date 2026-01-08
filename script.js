@@ -38,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctaBtn = document.getElementById('cta-btn');
     if (ctaBtn) {
         ctaBtn.addEventListener('click', () => {
-            // Placeholder for checkout logic
-            console.log('Redirecting to checkout...');
-            // window.location.href = 'YOUR_CHECKOUT_URL';
+             window.location.href = 'https://payment.ticto.app/O025361D8?event=PageView&lp_cta=cta-btn&product_id=102220&offer_code=O025361D8&currency=brl&_gl=&fbc=&fbp=&fbclid=&payment_method=credit_card&visitor_id=&fingerprint=';
         });
     }
 });
