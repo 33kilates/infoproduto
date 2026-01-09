@@ -5,369 +5,938 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raio-X da Equipe Híbrida - Diagnóstico</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Preconnects for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://scripts.converteai.net">
+    <link rel="preconnect" href="https://cdn.converteai.net">
+
+    <!-- Optimized Styles (No CDN) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style_optimized.css">
+
+    <!-- Critical Tracking Logic (Inline for immediate execution) -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#08418e',
-                            teal: '#2cc6b6',
-                            dark: '#0a192f',
-                            light: '#f8f9fa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'glow': '0 0 20px rgba(44, 198, 182, 0.3)',
-                        'card': '0 10px 30px -10px rgba(0, 0, 0, 0.1)'
-                    }
-                }
+        (function () {
+            const p = new URLSearchParams(location.search);
+            const fbp = p.get("fbp");
+            const fbc = p.get("fbc");
+            const fbclid = p.get("fbclid");
+
+            function setCookie(name, val, days) {
+                if (!val) return;
+                const d = new Date();
+                d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+                document.cookie = `${name}=${encodeURIComponent(val)}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
             }
-        }
+
+            if (!fbc && fbclid) {
+                const ts = Math.floor(Date.now() / 1000);
+                setCookie("_fbc", `fb.1.${ts}.${fbclid}`, 90);
+            } else {
+                setCookie("_fbc", fbc, 90);
+            }
+
+            setCookie("_fbp", fbp, 90);
+        })();
     </script>
+
+    <!-- Dimpple Analytics (Async) -->
+    <script type="text/javascript">
+        (function (g, u, r, i, d, e, a) {
+            g.DimppleAnalyticsObject = d; if (!(d in g)) {
+                g[d] = function () { g[d].q.push(arguments); }; g[d].q = [];
+            } g[d].l = (new Date()).getTime(); var e = u.createElement(r);
+            e.src = i; e.async = true; var a = u.getElementsByTagName(r)[0]; a.parentNode.insertBefore(e, a)
+        })(window, document, 'script', '//api.dimpple.com/public/js/analytics.js?trk=11314.zTEMMTQ.725aa855', 'trk');
+    </script>
+
+    <!-- Google Analytics 4 (Async) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG4F9GBLMJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NG4F9GBLMJ', { send_page_view: true });
+    </script>
+
+    <!-- Application Logic (Deferred) -->
+    <script defer src="script.js"></script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden selection:bg-brand-teal selection:text-white">
 
     <!-- A. TOPO -->
     <header class="relative bg-gradient-to-br from-brand-dark to-brand-blue text-white overflow-hidden pb-20 pt-10">
-        <div
-            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
+        <div class="absolute inset-0 bg-brand-dark opacity-10 mix-blend-soft-light"
+            style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');">
         </div>
+
         <div class="container mx-auto px-4 max-w-4xl relative z-10 text-center">
             <span
                 class="inline-block py-1 px-3 rounded-full bg-brand-teal/20 border border-brand-teal/50 text-brand-teal text-sm font-bold mb-6 tracking-wide animate-fade-in-up">
                 RESULTADO DA SUA ANÁLISE DE PERFIL DE LIDERANÇA
             </span>
+
             <h1
                 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up delay-100">
                 Você não tem um problema de vendas.<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-blue-200">Você está
                     perdendo dinheiro com uma Equipe Zumbi.</span>
             </h1>
+
             <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
                 Seu diagnóstico mostra que você entrega mercadoria para pessoas erradas — e isso explica a rotatividade,
                 o calote e o faturamento instável.
             </p>
 
-            <!-- VSL SECTION -->
-            <div
-                class="relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 overflow-hidden">
+            <!-- VSL SECTION (ID para Dimpple: #vsl-box) -->
+            <div id="vsl-box"
+                class="relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 overflow-hidden animate-scale-up delay-300">
                 <vturb-smartplayer id="vid-695d1e0293850164e9f78c8f"
                     style="display: block; margin: 0 auto; width: 100%; height: 100%;"></vturb-smartplayer>
             </div>
-            <script
-                type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/32c04de8-50be-4962-b6d1-667ddc540d4b/players/695d1e0293850164e9f78c8f/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+
+            <script type="text/javascript">
+                var s = document.createElement("script");
+                s.src = "https://scripts.converteai.net/32c04de8-50be-4962-b6d1-667ddc540d4b/players/695d1e0293850164e9f78c8f/v4/player.js";
+                s.async = !0;
+                document.head.appendChild(s);
+            </script>
         </div>
     </header>
 
-    <!-- B. MECANISMO DO PROBLEMA -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 max-w-3xl text-center">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-8 scroll-reveal">
-                O verdadeiro vilão é a <span class="text-brand-blue">Cegueira de Perfil</span>
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div
-                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-100">
-                    <div class="text-4xl mb-4">🙈</div>
-                    <h3 class="font-bold text-lg mb-2">Tratamento Igual</h3>
-                    <p class="text-gray-600 text-sm">Tratar velocistas e maratonistas do mesmo jeito quebra o ritmo de
-                        ambos.</p>
-                </div>
-                <div
-                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-200">
-                    <div class="text-4xl mb-4">💸</div>
-                    <h3 class="font-bold text-lg mb-2">Esforço Desperdiçado</h3>
-                    <p class="text-gray-600 text-sm">Investir tempo e energia em quem nunca vai performar como você
-                        espera.</p>
-                </div>
-                <div
-                    class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-300">
-                    <div class="text-4xl mb-4">📉</div>
-                    <h3 class="font-bold text-lg mb-2">Prejuízo Acumulado</h3>
-                    <p class="text-gray-600 text-sm">O custo invisível da rotatividade e da inadimplência corroendo seu
-                        lucro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="conteudo-pitch">
 
-    <!-- C. MECANISMO DA SOLUÇÃO + AUTORIDADE -->
-    <section class="py-20 bg-gray-50 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-teal/5 to-transparent"></div>
-        <div class="container mx-auto px-4 max-w-4xl relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-6 scroll-reveal">
-                    Equipes lucrativas não dependem de sorte.<br>
-                    Elas seguem um <span class="text-brand-teal">modelo validado</span>.
+        <!-- B. MECANISMO DO PROBLEMA -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-3xl text-center">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-8 scroll-reveal">
+                    O verdadeiro vilão é a <span class="text-brand-blue">Cegueira de Perfil</span>
                 </h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto scroll-reveal delay-100">
-                    As maiores marcas do mundo não crescem na base da "animação". Elas crescem com <strong>arquitetura
-                        de equipe</strong>.
+
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div
+                        class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-100">
+                        <div class="text-4xl mb-4">🙈</div>
+                        <h3 class="font-bold text-lg mb-2">Tratamento Igual</h3>
+                        <p class="text-gray-600 text-sm">Tratar velocistas e maratonistas do mesmo jeito quebra o ritmo
+                            de ambos.</p>
+                    </div>
+
+                    <div
+                        class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-200">
+                        <div class="text-4xl mb-4">💸</div>
+                        <h3 class="font-bold text-lg mb-2">Esforço Desperdiçado</h3>
+                        <p class="text-gray-600 text-sm">Investir tempo e energia em quem nunca vai performar como você
+                            espera.</p>
+                    </div>
+
+                    <div
+                        class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-card hover:-translate-y-2 transition-transform duration-300 scroll-reveal delay-300">
+                        <div class="text-4xl mb-4">📉</div>
+                        <h3 class="font-bold text-lg mb-2">Prejuízo Acumulado</h3>
+                        <p class="text-gray-600 text-sm">O custo invisível da rotatividade e da inadimplência corroendo
+                            seu lucro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. MECANISMO DA SOLUÇÃO + AUTORIDADE -->
+        <section class="py-20 bg-gray-50 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-teal/5 to-transparent"></div>
+            <div class="container mx-auto px-4 max-w-4xl relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-6 scroll-reveal">
+                        Equipes lucrativas não dependem de sorte.<br>
+                        Elas seguem um <span class="text-brand-teal">modelo validado</span>.
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto scroll-reveal delay-100">
+                        As maiores marcas do mundo não crescem na base da "animação". Elas crescem com
+                        <strong>arquitetura de
+                            equipe</strong>.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 scroll-reveal delay-200">
+                    <span class="text-2xl font-bold text-gray-400">Mary Kay</span>
+                    <span class="text-2xl font-bold text-gray-400">Avon</span>
+                    <span class="text-2xl font-bold text-gray-400">Natura</span>
+                </div>
+
+                <div
+                    class="mt-12 p-8 bg-white/60 backdrop-blur-md border border-white rounded-2xl shadow-sm text-center scroll-reveal delay-300">
+                    <p class="text-gray-700 italic">
+                        "Essas gigantes trabalham com diferentes perfis, usam líderes estratégicos e bases estáveis. O
+                        segredo não é motivar todo mundo igual, mas dar a função certa para a pessoa certa."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. OS 3 PERFIS DA EQUIPE HÍBRIDA -->
+        <section class="py-24 bg-brand-dark text-white relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl -translate-y-1/2">
+            </div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-16 scroll-reveal">
+                    Os 3 Perfis da <span class="text-brand-teal">Equipe Híbrida</span>
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-100">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
+                            🚀
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-3">Sprinter</h3>
+                        <p class="text-gray-300 font-light text-sm leading-relaxed">
+                            O perfil "Foguete". Vende muito rápido, traz caixa imediato, mas pode cansar rápido. Precisa
+                            de incentivo curto e agressivo.
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-200">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-400 to-brand-blue rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
+                            🛡️
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-3">Estável</h3>
+                        <p class="text-gray-300 font-light text-sm leading-relaxed">
+                            O perfil "Colchão". Mantém a base, evita o churn, garante o faturamento recorrente. A base
+                            segura da sua operação.
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
+                            🧠
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-3">Empreendedora</h3>
+                        <p class="text-gray-300 font-light text-sm leading-relaxed">
+                            O perfil "Cérebro". Tem visão de negócio, potencial para liderança e expansão. É quem vai
+                            escalar junto com você.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- D2. PROVA NUMÉRICA + SIMULADOR (insira entre D e E) -->
+        <section id="simulator-section" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="text-center mb-12 scroll-reveal">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-brand-blue text-sm font-bold mb-4 tracking-wide">
+                        SIMULAÇÃO ILUSTRATIVA
+                    </span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                        O “dinheiro na mesa” que a <span class="text-brand-teal">Equipe Zumbi</span> esconde
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Quando você trata todo mundo igual, você perde caixa em silêncio.
+                        O Raio-X existe pra transformar <strong>achismo</strong> em <strong>arquitetura de
+                            equipe</strong>.
+                    </p>
+                </div>
+
+                <!-- Cards: faixas por perfil -->
+                <div class="grid md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-white rounded-3xl shadow-card border border-gray-100 p-7 scroll-reveal">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="font-heading text-xl font-bold text-brand-dark">Sprinter</div>
+                            <div class="text-2xl">🚀</div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Perfil de pico. Faz caixa rápido quando você cria campanha certa (curta e agressiva).
+                        </p>
+                        <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                            <div class="text-sm text-gray-500 mb-1">Faixa típica (pedido/mês)</div>
+                            <div class="text-2xl font-extrabold text-brand-dark">R$ 1.500 – R$ 4.000</div>
+                            <div class="text-xs text-gray-500 mt-2">Referência de mercado: picos de campanha costumam
+                                concentrar o caixa nessa faixa (varia por catálogo e gestão).</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-card border border-gray-100 p-7 scroll-reveal delay-100">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="font-heading text-xl font-bold text-brand-dark">Estável</div>
+                            <div class="text-2xl">🛡️</div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Perfil de base. Mantém recorrência e reduz a “montanha-russa” do faturamento.
+                        </p>
+                        <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                            <div class="text-sm text-gray-500 mb-1">Faixa típica (pedido/mês)</div>
+                            <div class="text-2xl font-extrabold text-brand-dark">R$ 300 – R$ 700</div>
+                            <div class="text-xs text-gray-500 mt-2">Referência de mercado: a base recorrente costuma
+                                rodar nessa faixa em operações maduras (varia).</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-card border border-gray-100 p-7 scroll-reveal delay-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="font-heading text-xl font-bold text-brand-dark">Empreendedora</div>
+                            <div class="text-2xl">🧠</div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Perfil de escala. Tem visão de negócio e vira multiplicadora (liderança/expansão).
+                        </p>
+                        <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                            <div class="text-sm text-gray-500 mb-1">Faixa típica (pedido/mês)</div>
+                            <div class="text-2xl font-extrabold text-brand-dark">R$ 1.000 – R$ 3.000</div>
+                            <div class="text-xs text-gray-500 mt-2">Além da venda própria: é o perfil que sustenta a
+                                expansão (liderança e multiplicação).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray-500 text-center mt-4 scroll-reveal">
+                    Referência de redes grandes: a média mensal por consultora tende a ficar em uma faixa mais baixa,
+                    enquanto o resultado real aparece
+                    quando você combina base (Estáveis), picos (Sprinters) e escala (Empreendedoras).
+                </p>
+
+                <!-- Simulador -->
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden scroll-reveal">
+                    <div class="p-8 md:p-10">
+                        <div class="text-center mb-8">
+                            <h3 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark mb-2">
+                                Simulador rápido do caixa (por tamanho de time)
+                            </h3>
+                            <p class="text-gray-600 max-w-3xl mx-auto">
+                                Selecione seu cenário e veja quanto <strong>você pode estar deixando na mesa</strong>
+                                por cegueira de perfil.
+                            </p>
+                        </div>
+
+                        <!-- Toggle centralizado e com quebra de linha segura -->
+                        <div class="flex justify-center mb-8">
+                            <div
+                                class="flex flex-wrap justify-center gap-2 rounded-2xl bg-gray-50 border border-gray-200 p-2 max-w-full">
+                                <button data-sim-size="20"
+                                    class="sim-btn px-5 py-2.5 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark whitespace-nowrap">
+                                    20 revendedoras
+                                </button>
+                                <button data-sim-size="50"
+                                    class="sim-btn px-5 py-2.5 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark whitespace-nowrap">
+                                    50 revendedoras
+                                </button>
+                                <button data-sim-size="100"
+                                    class="sim-btn px-5 py-2.5 rounded-xl text-sm font-bold text-gray-600 hover:text-brand-dark whitespace-nowrap">
+                                    100 revendedoras
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- Resultado -->
+                        <div class="grid lg:grid-cols-3 gap-6">
+                            <!-- Potencial -->
+                            <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6">
+                                <div class="text-sm font-bold text-brand-blue mb-2">POTENCIAL COM EQUIPE HÍBRIDA</div>
+                                <div class="text-gray-600 text-sm mb-4">Estimativa de faturamento bruto/mês (pedido)
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-600 text-sm">Conservador</span>
+                                        <span id="sim-hybrid-low" class="font-extrabold text-brand-dark"></span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-600 text-sm">Provável</span>
+                                        <span id="sim-hybrid-mid" class="font-extrabold text-brand-dark text-xl"></span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-600 text-sm">Agressivo (campanhas)</span>
+                                        <span id="sim-hybrid-high" class="font-extrabold text-brand-dark"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-xs text-gray-500">
+                                    *Valores ilustrativos. Variam por ticket, frequência de pedidos, inadimplência e
+                                    gestão.
+                                </div>
+                            </div>
+
+                            <!-- Perdas -->
+                            <div
+                                class="rounded-3xl bg-brand-dark text-white border border-white/10 p-6 relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-10 mix-blend-soft-light"
+                                    style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');">
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="text-sm font-bold text-brand-teal mb-2">EFEITO “EQUIPE ZUMBI”</div>
+                                    <div class="text-blue-100 text-sm mb-4">
+                                        Sem triagem e sem função por perfil, é comum operar abaixo do potencial.
+                                    </div>
+
+                                    <div class="rounded-2xl bg-white/5 border border-white/10 p-4 mb-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-blue-200 text-sm font-bold">Cenário moderado</span>
+                                            <span class="text-brand-teal text-sm font-extrabold">10% – 15%</span>
+                                        </div>
+                                        <div class="text-sm text-blue-100">Dinheiro na mesa (estimativa)</div>
+                                        <div id="sim-loss-moderate" class="text-2xl font-extrabold mt-1"></div>
+                                    </div>
+
+                                    <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-blue-200 text-sm font-bold">Cenário pesado</span>
+                                            <span class="text-brand-teal text-sm font-extrabold">30% – 50%</span>
+                                        </div>
+                                        <div class="text-sm text-blue-100">Dinheiro na mesa (estimativa)</div>
+                                        <div id="sim-loss-heavy" class="text-2xl font-extrabold mt-1"></div>
+                                    </div>
+
+                                    <div class="mt-5 text-xs text-blue-200/80">
+                                        Não é “motivação”. É <strong>arquitetura de equipe</strong>: perfil certo,
+                                        função certa, gestão certa.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA -->
+                            <div class="rounded-3xl bg-white border border-gray-100 p-6">
+                                <div class="text-sm font-bold text-brand-blue mb-2">O QUE MUDA COM A PLANILHA (RAIO-X)
+                                </div>
+                                <h4 class="font-heading text-2xl font-bold text-brand-dark mb-3">
+                                    Você para de adivinhar.
+                                </h4>
+                                <p class="text-gray-600 mb-5">
+                                    Em vez de “apostar” em quem te dá calote ou some, você aplica a <strong>Planilha de
+                                        Triagem Psicográfica (Raio-X)</strong> e usa o Manual
+                                    para colocar cada perfil na função certa — e estabilizar o caixa.
+                                </p>
+
+                                <ul class="space-y-3 text-sm text-gray-700 mb-6">
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1 text-brand-teal">✅</span>
+                                        <span>Filtra quem tem perfil de pagador (menos inadimplência)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1 text-brand-teal">✅</span>
+                                        <span>Organiza incentivos por perfil (picos com Sprinter, base com
+                                            Estável)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1 text-brand-teal">✅</span>
+                                        <span>Identifica quem vira liderança (Empreendedora) e multiplica o time</span>
+                                    </li>
+                                </ul>
+
+                                <a href="#offer-section"
+                                    class="inline-flex w-full items-center justify-center px-6 py-4 font-bold rounded-2xl bg-brand-teal text-white hover:bg-teal-500 transition-colors shadow-lg">
+                                    Quero aplicar o Raio-X agora
+                                </a>
+
+                                <div class="mt-4 text-xs text-gray-500 text-center">
+                                    Você recebe a planilha + manual + scripts pra aplicar sem “gaguejar”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rodapé de credibilidade -->
+                    <div class="px-8 md:px-10 py-6 bg-gray-50 border-t border-gray-200">
+                        <p class="text-sm text-gray-600">
+                            <strong>Importante:</strong> as faixas são estimativas ilustrativas para dar referência.
+                            O objetivo do Raio-X é aumentar a previsibilidade e reduzir perdas invisíveis (calote,
+                            rotatividade e estoque parado).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- E. BENEFÍCIOS -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark text-center mb-16 scroll-reveal">
+                    O que acontece quando você usa o <span class="bg-brand-teal/20 px-2 rounded">Raio-X</span>
+                </h2>
+
+                <div class="space-y-6">
+                    <div
+                        class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal">
+                        <div
+                            class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center mr-6 text-green-600 text-xl">
+                            ✅
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-dark">Fim do Calote</h4>
+                            <p class="text-gray-600">Você para de entregar mercadoria para quem não tem perfil de
+                                pagador.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-100">
+                        <div
+                            class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center mr-6 text-blue-600 text-xl">
+                            🧘‍♀️
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-dark">Tempo Livre Mental</h4>
+                            <p class="text-gray-600">Sua equipe roda com mais autonomia, cada um na função certa.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-200">
+                        <div
+                            class="w-12 h-12 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center mr-6 text-purple-600 text-xl">
+                            📈
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-dark">Lucro Previsível</h4>
+                            <p class="text-gray-600">Entenda exatamente de onde vem seu faturamento e como escalar sem
+                                sofrer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. STACK DA OFERTA (ID para Dimpple: #offer-section) -->
+        <section id="offer-section" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="text-center mb-16">
+                    <span class="text-brand-blue font-bold tracking-widest text-sm">OFERTA ESPECIAL</span>
+                    <h2 class="font-heading text-4xl font-bold text-brand-dark mt-2">O Kit Completo de Implementação
+                    </h2>
+                </div>
+
+                <div class="grid gap-12">
+                    <div
+                        class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal">
+                        <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
+                            <img src="https://placehold.co/600x400/08418e/FFFFFF?text=Planilha+de+Triagem"
+                                alt="Planilha de Triagem" loading="lazy" decoding="async"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 from-black/50 to-transparent bg-gradient-to-t"></div>
+                        </div>
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <div class="text-brand-teal font-bold text-sm mb-2">ITEM 01</div>
+                            <h3 class="font-heading text-2xl font-bold mb-4">Planilha de Triagem Psicográfica</h3>
+                            <p class="text-gray-600 mb-6 border-l-2 border-brand-teal/30 pl-4">
+                                Ferramenta prática para filtrar perfis em minutos. Saiba quem é Sprinter, Estável ou
+                                Empreendedora antes de contratar.
+                            </p>
+                            <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100">
+                        <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
+                            <img src="manual_scripts_1765833948537.png" alt="Manual e Scripts" loading="lazy"
+                                decoding="async"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <div class="text-brand-teal font-bold text-sm mb-2">ITEM 02</div>
+                            <h3 class="font-heading text-2xl font-bold mb-4">Manual de Identificação + Scripts</h3>
+                            <p class="text-gray-600 mb-6 border-l-2 border-brand-teal/30 pl-4">
+                                O passo-a-passo exato e as mensagens de WhatsApp copi-e-cola para aplicar o método sem
+                                gaguejar.
+                            </p>
+                            <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200">
+                        <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
+                            <img src="bonus_meeting.png" alt="Reunião de Aceleração" loading="lazy" decoding="async"
+                                class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <div
+                                class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+                                BÔNUS #1</div>
+                            <h3 class="font-heading text-2xl font-bold mb-4">Reunião Gratuita de Aceleração (30 min 1:1)
+                            </h3>
+                            <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
+                                Sessão rápida pra pegar o seu Raio-X preenchido e transformar em um plano de ação
+                                imediato, além de apresentar um mecanismo exclusivo que já aplicamos na nossa operação.
+                            </p>
+                            <div class="font-bold text-xl text-white">Valor: Inestimável</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center border border-brand-teal/30 scroll-reveal delay-300">
+                        <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
+                            <img src="bonus_scripts.png" alt="Mini-Roteiros por Perfil" loading="lazy" decoding="async"
+                                class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <div
+                                class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+                                BÔNUS #2</div>
+                            <h3 class="font-heading text-2xl font-bold mb-4">Mini-Roteiros por Perfil</h3>
+                            <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
+                                Guia ultra prático: “o que falar com cada tipo de revendedora”, após o diagnóstico do
+                                Raio-X.
+                            </p>
+                            <div class="font-bold text-xl text-white">Valor: R$ 67</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center scroll-reveal">
+                    <p class="text-gray-500 text-lg mb-2">Valor total de tudo: <span
+                            class="line-through decoration-red-500">R$
+                            291,00</span></p>
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="text-brand-dark font-bold text-2xl mb-1">Oferta Única de Página de Obrigado:</p>
+                        <p class="text-6xl md:text-7xl font-extrabold text-brand-teal tracking-tight">R$ 47,00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. GARANTIA -->
+        <section class="py-16 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-4 max-w-3xl text-center scroll-reveal">
+                <div class="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center text-4xl mb-6">
+                    🔒</div>
+                <h2 class="font-heading text-2xl font-bold text-brand-dark mb-4">Garantia Risco Zero</h2>
+                <p class="text-gray-600">
+                    Se você aplicar o método e não sentir clareza absoluta sobre quem é quem na sua equipe, nós
+                    devolvemos 100% do seu dinheiro. Sem perguntas, sem letras miúdas.
                 </p>
             </div>
+        </section>
 
-            <div
-                class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 scroll-reveal delay-200">
-                <!-- Logos Placeholders text for now -->
-                <span class="text-2xl font-bold text-gray-400">Mary Kay</span>
-                <span class="text-2xl font-bold text-gray-400">Avon</span>
-                <span class="text-2xl font-bold text-gray-400">Natura</span>
-            </div>
-
-            <div
-                class="mt-12 p-8 bg-white/60 backdrop-blur-md border border-white rounded-2xl shadow-sm text-center scroll-reveal delay-300">
-                <p class="text-gray-700 italic">
-                    "Essas gigantes trabalham com diferentes perfis, usam líderes estratégicos e bases estáveis. O
-                    segredo não é motivar todo mundo igual, mas dar a função certa para a pessoa certa."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- D. OS 3 PERFIS DA EQUIPE HÍBRIDA -->
-    <section class="py-24 bg-brand-dark text-white relative overflow-hidden">
-        <!-- Background elements -->
-        <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl"></div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-16 scroll-reveal">
-                Os 3 Perfis da <span class="text-brand-teal">Equipe Híbrida</span>
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-100">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
-                        🚀
-                    </div>
-                    <h3 class="font-heading text-2xl font-bold mb-3">Sprinter</h3>
-                    <p class="text-gray-300 font-light text-sm leading-relaxed">
-                        O perfil "Foguete". Vende muito rápido, traz caixa imediato, mas pode cansar rápido. Precisa de
-                        incentivo curto e agressivo.
+        <!-- FAQ (insira antes do CTA FINAL ou antes do footer) -->
+        <section id="faq" class="pt-20 pb-28 bg-white border-t border-gray-100">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12 scroll-reveal">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-brand-blue text-sm font-bold mb-4 tracking-wide">
+                        DÚVIDAS FREQUENTES
+                    </span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                        Tudo o que você precisa saber antes de aplicar o método
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Sem enrolação: como funciona o acesso, o que você recebe e o que esperar de resultado quando
+                        você aplica do jeito certo.
                     </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-200">
+                <div class="space-y-4">
+                    <!-- Item 01 -->
                     <div
-                        class="w-16 h-16 bg-gradient-to-br from-blue-400 to-brand-blue rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
-                        🛡️
-                    </div>
-                    <h3 class="font-heading text-2xl font-bold mb-3">Estável</h3>
-                    <p class="text-gray-300 font-light text-sm leading-relaxed">
-                        O perfil "Colchão". Mantém a base, evita o churn, garante o faturamento recorrente. A base
-                        segura da sua operação.
-                    </p>
-                </div>
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    🧬</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        O que exatamente eu recebo ao comprar?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        O kit completo pra sair do achismo e montar uma equipe que dá caixa de verdade.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
 
-                <!-- Card 3 -->
-                <div
-                    class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-all duration-500 hover:shadow-glow group scroll-reveal delay-300">
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Você recebe a <strong>Planilha de Triagem Psicográfica (Raio-X)</strong> + o
+                                    <strong>Manual de Identificação</strong> + <strong>Scripts copi-e-cola</strong> pra
+                                    aplicar sem “gaguejar”.
+                                </p>
+                                <p>
+                                    Na prática, isso te dá um jeito simples de:
+                                    <strong>identificar perfil, evitar calote, organizar função e reduzir
+                                        rotatividade</strong>
+                                    — antes de entregar mercadoria pra pessoa errada.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 02 -->
                     <div
-                        class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform shadow-lg">
-                        🧠
-                    </div>
-                    <h3 class="font-heading text-2xl font-bold mb-3">Empreendedora</h3>
-                    <p class="text-gray-300 font-light text-sm leading-relaxed">
-                        O perfil "Cérebro". Tem visão de negócio, potencial para liderança e expansão. É quem vai
-                        escalar junto com você.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal delay-100">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    ♾️</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        O acesso é vitalício? Eu recebo atualizações?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        Sim: acesso vitalício + melhorias e atualizações incluídas.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
 
-    <!-- E. BENEFÍCIOS -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark text-center mb-16 scroll-reveal">
-                O que acontece quando você usa o <span class="bg-brand-teal/20 px-2 rounded">Raio-X</span>
-            </h2>
-            <div class="space-y-6">
-                <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal">
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Sim. Você tem <strong>acesso vitalício</strong> ao material e recebe
+                                    <strong>todas as atualizações</strong> que forem sendo adicionadas ao kit.
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    (Ex.: versões melhoradas da planilha, novos scripts, ajustes de triagem e melhorias
+                                    de aplicação.)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 03 -->
                     <div
-                        class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center mr-6 text-green-600 text-xl">
-                        ✅</div>
-                    <div>
-                        <h4 class="font-bold text-xl text-brand-dark">Fim do Calote</h4>
-                        <p class="text-gray-600">Você para de entregar mercadoria para quem não tem perfil de pagador.
-                        </p>
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal delay-200">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    🔐</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        Como funciona o acesso pela Ticto?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        Compra aprovada → acesso liberado → você recebe tudo por e-mail e/ou área de
+                                        membros.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
+
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Assim que o pagamento é confirmado, a Ticto envia automaticamente o
+                                    <strong>link de acesso</strong> para o e-mail que você usou na compra.
+                                </p>
+                                <p>
+                                    Você entra na sua área de acesso e encontra a <strong>planilha</strong>, o
+                                    <strong>manual</strong>
+                                    e os <strong>scripts</strong> organizados para aplicar no mesmo dia.
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    Dica: confira a caixa de spam e promoções — às vezes o e-mail cai lá.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-100">
+
+                    <!-- Item 04 -->
                     <div
-                        class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center mr-6 text-blue-600 text-xl">
-                        🧘‍♀️</div>
-                    <div>
-                        <h4 class="font-bold text-xl text-brand-dark">Tempo Livre Mental</h4>
-                        <p class="text-gray-600">Sua equipe roda com mais autonomia, cada um na função certa.</p>
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal delay-300">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    ⚡</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        Como funciona a reunião 1:1 e por que ela acelera resultados?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        Uma sessão objetiva pra transformar seu diagnóstico em plano de ação.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
+
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    A reunião 1:1 é uma sessão curta e estratégica para:
+                                    <strong>corrigir erros de aplicação</strong>, definir prioridade e te mostrar
+                                    <strong>como organizar sua equipe por perfil</strong> sem perder semanas testando.
+                                </p>
+                                <p>
+                                    Você sai com um <strong>plano claro</strong> do que fazer primeiro, o que cortar,
+                                    e como aplicar os scripts com segurança.
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    (A disponibilidade e o agendamento seguem as instruções dentro do seu acesso.)
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="flex items-center p-6 bg-gray-50 rounded-2xl border-l-4 border-brand-teal hover:shadow-lg transition-shadow scroll-reveal delay-200">
+
+                    <!-- Item 05 -->
                     <div
-                        class="w-12 h-12 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center mr-6 text-purple-600 text-xl">
-                        📈</div>
-                    <div>
-                        <h4 class="font-bold text-xl text-brand-dark">Lucro Previsível</h4>
-                        <p class="text-gray-600">Entenda exatamente de onde vem seu faturamento e como escalar sem
-                            sofrer.</p>
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    🎯</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        Em quanto tempo eu consigo aplicar?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        O objetivo é ser simples: aplicar rápido e ganhar clareza rápida.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
+
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Você consegue aplicar a triagem em <strong>minutos por pessoa</strong>, porque a
+                                    planilha já conduz a decisão.
+                                    O Manual te dá o passo-a-passo e os Scripts te dizem <strong>o que falar</strong>
+                                    com cada perfil.
+                                </p>
+                                <p>
+                                    Ou seja: menos teoria, mais implementação.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 06 -->
+                    <div
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    🧾</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        Isso serve pra qualquer nicho de consignado?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        Sim — porque o método é sobre perfil e função, não sobre o produto.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
+
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Serve para moda, semijoias, cosméticos, utilidades e outros modelos onde você
+                                    precisa de <strong>giro</strong> com <strong>controle</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 07 -->
+                    <div
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal delay-100">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    🗑️</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        E se eu precisar demitir?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        O bônus "Demitir Sem Traumas" te ensina a fazer isso do jeito certo.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
+
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Muitas vezes a limpeza é necessária. O bônus específico que incluí te mostra como
+                                    desligar alguém
+                                    sem criar inimigos, de forma ética e tranquila, tirando o peso das suas costas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 08 -->
+                    <div
+                        class="faq-item bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm scroll-reveal delay-200">
+                        <button type="button"
+                            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-brand-teal/15 flex items-center justify-center text-xl">
+                                    💳</div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-brand-dark">
+                                        Quais as formas de pagamento?
+                                    </h3>
+                                    <p class="text-sm text-gray-600">
+                                        PIX, cartão de crédito, boleto ou PayPal.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="faq-icon text-brand-blue text-2xl leading-none select-none">+</span>
+                        </button>
+
+                        <div class="faq-content hidden px-6 pb-6">
+                            <div class="pl-14 text-gray-700 space-y-3">
+                                <p>
+                                    Tudo processado de forma 100% segura pela Ticto, uma das maiores plataformas de
+                                    infoprodutos do Brasil.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- F. STACK DA OFERTA -->
-    <section class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center mb-16">
-                <span class="text-brand-blue font-bold tracking-widest text-sm">OFERTA ESPECIAL</span>
-                <h2 class="font-heading text-4xl font-bold text-brand-dark mt-2">O Kit Completo de Implementação</h2>
-            </div>
-
-            <div class="grid gap-12">
-                <!-- Item 1 -->
-                <div
-                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal">
-                    <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
-                        <!-- Image Container -->
-                        <img src="https://placehold.co/600x400/08418e/FFFFFF?text=Planilha+de+Triagem"
-                            alt="Planilha de Triagem" width="600" height="400" loading="lazy"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <div class="text-brand-teal font-bold text-sm mb-2">ITEM 01</div>
-                        <h3 class="font-heading text-2xl font-bold mb-4">Planilha de Triagem Psicográfica</h3>
-                        <p class="text-gray-600 mb-6 border-l-2 border-brand-teal/30 pl-4">
-                            Ferramenta prática para filtrar perfis em minutos. Saiba quem é Sprinter, Estável ou
-                            Empreendedora antes de contratar.
-                        </p>
-                        <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div
-                    class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100">
-                    <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
-                        <!-- Image Container -->
-                        <img src="firing_relief_1765833964591.png" alt="Demitir sem Traumas" width="600" height="400"
-                            loading="lazy"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <div class="text-brand-teal font-bold text-sm mb-2">ITEM 02</div>
-                        <h3 class="font-heading text-2xl font-bold mb-4">Manual de Identificação + Scripts</h3>
-                        <p class="text-gray-600 mb-6 border-l-2 border-brand-teal/30 pl-4">
-                            O passo-a-passo exato e as mensagens de WhatsApp copi-e-cola para aplicar o método sem
-                            gaguejar.
-                        </p>
-                        <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
-                    </div>
-                </div>
-
-                <!-- Bonus 1 -->
-                <div
-                    class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center border border-brand-teal/30 scroll-reveal delay-200">
-                    <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
-                        <!-- Image Container -->
-                        <img src="bonus_meeting.png" alt="Reunião de Aceleração" width="600" height="400" loading="lazy"
-                            class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <div
-                            class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
-                            BÔNUS #1</div>
-                        <h3 class="font-heading text-2xl font-bold mb-4">Reunião Gratuita de Aceleração (30 min 1:1)
-                        </h3>
-                        <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
-                            Sessão rápida pra pegar o seu Raio-X preenchido e transformar em um plano de ação imediato,
-                            além de apresentar um mecanismo exclusivo que já aplicamos na nossa operação.
-                        </p>
-                        <div class="font-bold text-xl text-white">Valor: Inestimável</div>
-                    </div>
-                </div>
-
-                <!-- Bonus 2 -->
-                <div
-                    class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center border border-brand-teal/30 scroll-reveal delay-300">
-                    <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
-                        <!-- Image Container -->
-                        <img src="bonus_scripts.png" alt="Mini-Roteiros por Perfil" width="600" height="400"
-                            loading="lazy"
-                            class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <div
-                            class="inline-block bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
-                            BÔNUS #2</div>
-                        <h3 class="font-heading text-2xl font-bold mb-4">Mini-Roteiros por Perfil</h3>
-                        <p class="text-blue-100 mb-6 border-l-2 border-brand-teal pl-4">
-                            Guia ultra prático: “o que falar com cada tipo de revendedora”, após o diagnóstico do
-                            Raio-X.
-                        </p>
-                        <div class="font-bold text-xl text-white">Valor: R$ 67</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Price Anchor -->
-            <div class="mt-16 text-center scroll-reveal">
-                <p class="text-gray-500 text-lg mb-2">Valor total de tudo: <span
-                        class="line-through decoration-red-500">R$ 291,00</span></p>
-                <div class="flex flex-col items-center justify-center">
-                    <p class="text-brand-dark font-bold text-2xl mb-1">Oferta Única de Página de Obrigado:</p>
-                    <p class="text-6xl md:text-7xl font-extrabold text-brand-teal tracking-tight">R$ 47,00</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- G. GARANTIA -->
-    <section class="py-16 bg-white border-b border-gray-100">
-        <div class="container mx-auto px-4 max-w-3xl text-center scroll-reveal">
-            <div class="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center text-4xl mb-6">🔒
-            </div>
-            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-4">Garantia Risco Zero</h2>
-            <p class="text-gray-600">
-                Se você aplicar o método e não sentir clareza absoluta sobre quem é quem na sua equipe, nós devolvemos
-                100% do seu dinheiro. Sem perguntas, sem letras miúdas.
-            </p>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- H. CTA FINAL -->
     <div class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-lg border-t border-gray-200 p-4 md:hidden z-50">
-        <button id="cta-floating"
-            class="checkout-click block w-full bg-brand-teal hover:bg-teal-500 text-white text-center font-bold py-4 rounded-xl shadow-lg transition-colors">
+        <a href="#checkout" id="cta-mobile"
+            class="js-checkout block w-full bg-brand-teal hover:bg-teal-500 text-white text-center font-bold py-4 rounded-xl shadow-lg transition-colors">
             Quero Parar de Perder Dinheiro
-        </button>
+        </a>
     </div>
 
     <section class="py-24 bg-brand-dark text-center relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light">
+        <div class="absolute inset-0 opacity-10 mix-blend-soft-light"
+            style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-10 max-w-4xl mx-auto leading-tight">
@@ -376,7 +945,7 @@
             </h2>
 
             <button id="cta-btn"
-                class="checkout-click group relative inline-flex items-center justify-center px-8 py-5 text-lg md:text-xl font-bold text-white transition-all duration-200 bg-brand-teal rounded-full focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-brand-teal hover:bg-teal-500 hover:scale-105 shadow-[0_0_40px_-10px_rgba(44,198,182,0.5)]">
+                class="group relative inline-flex items-center justify-center px-8 py-5 text-lg md:text-xl font-bold text-white transition-all duration-200 bg-brand-teal rounded-full focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-brand-teal hover:bg-teal-500 hover:scale-105 shadow-[0_0_40px_-10px_rgba(44,198,182,0.5)]">
                 <span>Quero parar de perder dinheiro com equipe errada</span>
                 <svg class="w-6 h-6 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
@@ -390,7 +959,7 @@
                         viewBox="0 0 20 20">
                         <path
                             d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                    </svg> Acesso imadiato</span>
+                    </svg> Acesso imediato</span>
                 <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-brand-teal" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
@@ -409,7 +978,6 @@
         <p>&copy; 2025 Método Equipe Híbrida. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
