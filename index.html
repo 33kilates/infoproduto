@@ -1327,13 +1327,18 @@
             <!-- VSL Wrapper -->
             <div id="vsl-wrapper"
                 class="relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-gray-900 rounded-2xl shadow-2xl border border-brand-teal/30 overflow-hidden animate-scale-up delay-300">
-                <div id="vsl-placeholder"
-                    class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 z-10">
-                    <div
-                        class="w-10 h-10 border-4 border-brand-teal/30 border-t-brand-teal rounded-full animate-spin mb-4">
-                    </div>
-                    <p class="text-xs text-brand-teal font-mono uppercase tracking-widest">Aguarde...</p>
-                </div>
+                <vturb-smartplayer id="vid-695d1e0293850164e9f78c8f"
+                    style="display: block; margin: 0 auto; width: 100%; height: 100%;"></vturb-smartplayer>
+
+                <!-- Script do Vídeo (Assíncrono, mas não "Nuclear") -->
+                <script type="text/javascript">
+                    (function () {
+                        var s = document.createElement("script");
+                        s.src = "https://scripts.converteai.net/32c04de8-50be-4962-b6d1-667ddc540d4b/players/695d1e0293850164e9f78c8f/v4/player.js";
+                        s.async = true;
+                        document.head.appendChild(s);
+                    })();
+                </script>
             </div>
         </div>
     </header>
@@ -1434,21 +1439,27 @@
             </div>
         </section>
 
-        <!-- D2. SIMULADOR -->
+        <!-- D2. SIMULADOR (Recuperado Original) -->
         <section id="simulator-section" class="py-20 bg-gray-50 border-t border-gray-200">
             <div class="container mx-auto px-4 max-w-5xl">
+
                 <div class="text-center mb-12 scroll-reveal">
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">
                         O “dinheiro na mesa” que a <span class="text-brand-teal">Equipe Zumbi</span> esconde
                     </h2>
                 </div>
+
                 <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden scroll-reveal">
                     <div class="p-8 md:p-10">
                         <div class="text-center mb-8">
                             <h3 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark mb-2">Simulador
                                 rápido do caixa</h3>
-                            <p class="text-gray-600">Selecione seu cenário e veja o potencial desperdiçado.</p>
+                            <p class="text-gray-600 max-w-3xl mx-auto">
+                                Selecione seu cenário e veja quanto <strong>você pode estar deixando na mesa</strong>
+                                por cegueira de perfil.
+                            </p>
                         </div>
+
                         <div class="flex justify-center mb-8">
                             <div
                                 class="flex flex-wrap justify-center gap-2 rounded-2xl bg-gray-50 border border-gray-200 p-2">
@@ -1463,36 +1474,66 @@
                                     revendedoras</button>
                             </div>
                         </div>
+
                         <div class="grid lg:grid-cols-3 gap-6">
                             <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6">
-                                <div class="text-sm font-bold text-brand-blue mb-2">POTENCIAL HÍBRIDO</div>
+                                <div class="text-sm font-bold text-brand-blue mb-2">POTENCIAL COM EQUIPE HÍBRIDA</div>
+                                <div class="text-gray-600 text-sm mb-4">Estimativa de faturamento bruto/mês (pedido)
+                                </div>
+
                                 <div class="space-y-3">
-                                    <div class="flex justify-between"><span
-                                            class="text-gray-600 text-sm">Conservador</span><span id="sim-hybrid-low"
-                                            class="font-extrabold text-brand-dark"></span></div>
-                                    <div class="flex justify-between"><span
-                                            class="text-gray-600 text-sm">Provável</span><span id="sim-hybrid-mid"
-                                            class="font-extrabold text-brand-dark text-xl"></span></div>
-                                    <div class="flex justify-between"><span
-                                            class="text-gray-600 text-sm">Agressivo</span><span id="sim-hybrid-high"
-                                            class="font-extrabold text-brand-dark"></span></div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-600 text-sm">Conservador</span>
+                                        <span id="sim-hybrid-low" class="font-extrabold text-brand-dark"></span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-600 text-sm">Provável</span>
+                                        <span id="sim-hybrid-mid" class="font-extrabold text-brand-dark text-xl"></span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-600 text-sm">Agressivo</span>
+                                        <span id="sim-hybrid-high" class="font-extrabold text-brand-dark"></span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div
                                 class="rounded-3xl bg-brand-dark text-white border border-white/10 p-6 relative overflow-hidden">
                                 <div class="absolute inset-0 opacity-10 mix-blend-soft-light"
                                     style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');">
                                 </div>
                                 <div class="relative z-10">
-                                    <div class="text-sm font-bold text-brand-teal mb-4">PERDA ATUAL ("ZUMBI")</div>
-                                    <div class="mb-4"><span class="text-blue-200 text-sm block">Cenário
-                                            Moderado</span><span id="sim-loss-moderate"
-                                            class="text-2xl font-extrabold"></span></div>
-                                    <div><span class="text-blue-200 text-sm block">Cenário Pesado</span><span
-                                            id="sim-loss-heavy" class="text-2xl font-extrabold"></span></div>
+                                    <div class="text-sm font-bold text-brand-teal mb-2">EFEITO “EQUIPE ZUMBI”</div>
+                                    <div class="text-blue-100 text-sm mb-4">Sem triagem e sem função por perfil, é comum
+                                        operar abaixo do potencial.</div>
+
+                                    <div class="rounded-2xl bg-white/5 border border-white/10 p-4 mb-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-blue-200 text-sm font-bold">Cenário moderado</span>
+                                            <span class="text-brand-teal text-sm font-extrabold">10% – 15%</span>
+                                        </div>
+                                        <div class="text-sm text-blue-100">Dinheiro na mesa (estimativa)</div>
+                                        <div id="sim-loss-moderate" class="text-2xl font-extrabold mt-1"></div>
+                                    </div>
+
+                                    <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-blue-200 text-sm font-bold">Cenário pesado</span>
+                                            <span class="text-brand-teal text-sm font-extrabold">30% – 50%</span>
+                                        </div>
+                                        <div class="text-sm text-blue-100">Dinheiro na mesa (estimativa)</div>
+                                        <div id="sim-loss-heavy" class="text-2xl font-extrabold mt-1"></div>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="rounded-3xl bg-white border border-gray-100 p-6 flex flex-col justify-center">
+                                <div class="text-sm font-bold text-brand-blue mb-2">O QUE MUDA COM A PLANILHA (RAIO-X)
+                                </div>
+                                <h4 class="font-heading text-2xl font-bold text-brand-dark mb-3">Você para de adivinhar.
+                                </h4>
+                                <p class="text-gray-600 mb-5">Em vez de “apostar”, você aplica a Planilha de Triagem
+                                    Psicográfica.</p>
                                 <a href="#offer-section"
                                     class="inline-flex w-full items-center justify-center px-6 py-4 font-bold rounded-2xl bg-brand-teal text-white hover:bg-teal-500 transition-colors shadow-lg text-center">
                                     Quero aplicar o Diagonóstico
@@ -1512,7 +1553,9 @@
                     <h2 class="font-heading text-4xl font-bold text-brand-dark mt-2">O Kit Completo de Implementação
                     </h2>
                 </div>
+
                 <div class="grid gap-12">
+                    <!-- Item 1 -->
                     <div
                         class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal">
                         <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
@@ -1527,6 +1570,8 @@
                             <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
                         </div>
                     </div>
+
+                    <!-- Item 2 -->
                     <div
                         class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-100">
                         <div class="md:w-1/2 h-64 md:h-80 bg-gray-100 relative group overflow-hidden">
@@ -1540,6 +1585,8 @@
                             <div class="font-bold text-xl text-brand-dark">Valor: R$ 97</div>
                         </div>
                     </div>
+
+                    <!-- Bonus 1 -->
                     <div
                         class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row items-center scroll-reveal delay-200">
                         <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
@@ -1556,6 +1603,8 @@
                             <div class="font-bold text-xl">Valor: Inestimável</div>
                         </div>
                     </div>
+
+                    <!-- Bonus 2 -->
                     <div
                         class="bg-gradient-to-br from-brand-dark to-brand-blue text-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse items-center scroll-reveal delay-300">
                         <div class="md:w-1/2 h-64 md:h-80 relative group overflow-hidden">
@@ -1572,6 +1621,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="mt-16 text-center scroll-reveal">
                     <p class="text-gray-500 text-lg mb-2">Valor Total: <span class="line-through decoration-red-500">R$
                             291,00</span></p>
@@ -1655,33 +1705,21 @@
         <p>&copy; 2025 Método Equipe Híbrida.</p>
     </footer>
 
-    <!-- NUCLEAR LAZY LOAD: TRACKING + VIDEO -->
+    <!-- NUCLEAR LAZY LOAD: Analytics ONLY (Video is now handled above) -->
     <script>
         (function () {
-            // Flags
             var triggered = false;
-
             function nukeLoad() {
                 if (triggered) return;
                 triggered = true;
 
-                // 1. Remove Placeholder
-                var ph = document.getElementById('vsl-placeholder');
-                if (ph) ph.style.display = 'none';
-
-                // 2. Load VTurb (Video)
-                var sVid = document.createElement("script");
-                sVid.src = "https://scripts.converteai.net/32c04de8-50be-4962-b6d1-667ddc540d4b/players/695d1e0293850164e9f78c8f/v4/player.js";
-                sVid.async = true;
-                document.head.appendChild(sVid);
-
-                // 3. Load Dimpple Analytics
+                // 1. Load Dimpple Analytics
                 var sDimp = document.createElement("script");
                 sDimp.src = "//api.dimpple.com/public/js/analytics.js?trk=11314.zTEMMTQ.725aa855";
                 sDimp.async = true;
                 document.head.appendChild(sDimp);
 
-                // 4. Load GA4 / GTM
+                // 2. Load GA4 / GTM
                 var sGa = document.createElement("script");
                 sGa.src = "https://www.googletagmanager.com/gtag/js?id=G-NG4F9GBLMJ";
                 sGa.async = true;
@@ -1693,8 +1731,7 @@
                 gtag('config', 'G-NG4F9GBLMJ', { 'send_page_view': true });
             }
 
-            // Triggers: Interaction OR Timeout (3.5s)
-            // This is safe for SEO (Google bots wait) and UX (users interact)
+            // Triggers for Analytics
             window.addEventListener('scroll', nukeLoad, { once: true });
             window.addEventListener('mousemove', nukeLoad, { once: true });
             window.addEventListener('touchstart', nukeLoad, { once: true });
